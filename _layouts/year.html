@@ -20,12 +20,7 @@ layout: default
 
       <li>
         <a href="{{ gazette.archive_url }}">
-          {% if page.provincial %}
-          {{ page.jurisdiction_name }} Provincial
-          {% else %}
-          National
-          {% endif %}
-
+          {% if page.provincial %}{{ page.jurisdiction_name }}{% endif %}
           {{ gazette.publication_title }}
           {% if gazette.publication_subtitle %}({{ gazette.publication_subtitle }}){% endif %}
           {% if gazette.special_issue %}{{ gazette.special_issue }}{% endif %}
