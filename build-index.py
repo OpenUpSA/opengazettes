@@ -10,11 +10,19 @@ jurisdictions = json.load(open('_data/jurisdictions.json'))
 
 
 def write_year(juri, year, gazettes):
+    provincial = juri != "ZA"
+    title = jurisdictions[juri]
+    if provincial:
+        title = title + " Provincial"
+    title = title + " Gazettes"
+
     with open('_gazettes/%s/%s.md' % (juri.lower(), year), 'w') as f:
         f.write("---\n")
         f.write("layout: year\n")
-        f.write("title: %s Gazettes %s\n" % (jurisdictions[juri], year))
+        f.write("title: %s %s\n" % (title, year))
         f.write("jurisdiction: %s\n" % juri)
+        f.write("jurisdiction_name: %s\n" % jurisdictions[juri])
+        f.write("provincial: %s\n" % str(juri != "ZA").lower())
         f.write("year: \"%s\"\n" % year)
         f.write("---\n")
 
@@ -27,10 +35,18 @@ def write_jurisdiction(juri, years):
         pass
 
     with open('%s/index.md' % path, 'w') as f:
+        provincial = juri != "ZA"
+        title = jurisdictions[juri]
+        if provincial:
+            title = title + " Provincial"
+        title = title + " Gazettes"
+
         f.write("---\n")
         f.write("layout: jurisdiction\n")
-        f.write("title: %s Gazettes\n" % jurisdictions[juri])
+        f.write("title: %s\n" % title)
         f.write("jurisdiction: %s\n" % juri)
+        f.write("jurisdiction_name: %s\n" % jurisdictions[juri])
+        f.write("provincial: %s\n" % str(juri != "ZA").lower())
         f.write("---\n")
 
     for year in years.iterkeys():
