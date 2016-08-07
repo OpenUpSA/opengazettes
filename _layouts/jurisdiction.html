@@ -9,8 +9,8 @@ layout: default
 
   <div class="post-content">
     <ul>
-    {% for year in page.years %}
-    <li><a href="{{ year }}">{{ year }}</a></li>
+    {% for year in site.data.gazettes[page.jurisdiction] | sort %}
+    <li><a href="{{ year[0] }}">{{ year[0] }}</a></li>
     {% endfor %}
     </ul>
   </div>

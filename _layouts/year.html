@@ -4,12 +4,12 @@ layout: default
 <article class="jurisdiction">
 
   <header class="post-header">
-    <h1 class="post-title">{{ page.jurisdiction }}: {{ page.title }}</h1>
+    <h1 class="post-title">{{ page.title }}</h1>
   </header>
 
   <div class="post-content">
-    {% for gazette in page.gazettes %}
-      {% assign currentdate = gazette.date | date: "%B %Y" %}
+    {% for gazette in site.data.gazettes[page.jurisdiction][page.year] %}
+      {% assign currentdate = gazette.publication_date | date: "%B %Y" %}
 
       {% if currentdate != date %}
         {% unless forloop.first %}</ul>{% endunless %}
@@ -18,7 +18,16 @@ layout: default
         {% assign date = currentdate %}
       {% endif %}
 
-      <li><a href="{{ gazette.url }}">{{ gazette.title }}</a></li>
+      <li>
+        <a href="{{ gazette.archive_url }}">
+          {{ gazette.publication_title }}
+          {% if gazette.publication_subtitle %}({{ gazette.publication_subtitle }}){% endif %}
+          {% if gazette.special_issue %}{{ gazette.special_issue }}{% endif %}
+          {% if gazette.volume_number %} vol {{ gazette.volume_number }}{% endif %}
+          no {{ gazette.issue_number }}
+          dated {{ gazette.publication_date | date: "%d %B %Y" }}
+        </a>
+      </li>
       {% if forloop.last %}</ul>{% endif %}
     {% endfor %}
   </div>

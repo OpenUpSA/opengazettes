@@ -5,7 +5,9 @@ layout: default
 <div class="home">
 
   <ul class="post-list">
-    <a href="gazettes/za/">National Gazettes</a>
+    {% for jurisdiction in site.data.jurisdictions %}
+    <li><a href="gazettes/{{ jurisdiction[0] | slugify }}/">{{ jurisdiction[1] }}</a></li>
+    {% endfor %}
   </ul>
 
 </div>
