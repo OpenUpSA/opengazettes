@@ -8,6 +8,7 @@
 # Site settings
 title: Open Gazettes South Africa
 email: info@code4sa.org
+baseurl: /opengazettes
 collections:
   gazettes:
     output: true
