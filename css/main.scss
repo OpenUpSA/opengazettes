@@ -22,6 +22,8 @@ $font-size-h4: 1.33em;
 $font-size-h5: 0.83em;
 $headings-font-weight: 400 !default;
 
+$navbar-border-radius: 0px;
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "bootstrap",
