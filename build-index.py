@@ -16,19 +16,19 @@ def write_year(juri, year, gazettes):
         title = title + " Provincial"
     title = title + " Gazettes"
 
-    with open('_gazettes/%s/%s.md' % (juri.lower(), year), 'w') as f:
+    with open('_gazettes/%s/%s.md' % (juri, year), 'w') as f:
         f.write("---\n")
         f.write("layout: year\n")
         f.write("title: %s %s\n" % (title, year))
         f.write("jurisdiction: %s\n" % juri)
         f.write("jurisdiction_name: %s\n" % jurisdictions[juri])
-        f.write("provincial: %s\n" % str(juri != "ZA").lower())
+        f.write("provincial: %s\n" % str(provincial).lower())
         f.write('year: "%s"\n' % year)
         f.write("---\n")
 
 
 def write_jurisdiction(juri, years):
-    path = '_gazettes/%s' % juri.lower()
+    path = '_gazettes/%s' % juri
     try:
         os.makedirs(path)
     except OSError:
@@ -46,7 +46,7 @@ def write_jurisdiction(juri, years):
         f.write("title: %s\n" % title)
         f.write("jurisdiction: %s\n" % juri)
         f.write("jurisdiction_name: %s\n" % jurisdictions[juri])
-        f.write("provincial: %s\n" % str(juri != "ZA").lower())
+        f.write("provincial: %s\n" % str(provincial).lower())
         f.write("---\n")
 
     for year in years.iterkeys():

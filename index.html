@@ -23,7 +23,7 @@ layout: default
       <ul>
         {% assign years = site.data.gazettes[code].years | reverse %}
         {% for year in years %}
-          <li><a href="gazettes/{{ jurisdiction[0] | slugify }}/{{ year }}">{{ year }}</a></li>
+          <li><a href="gazettes/{{ code }}/{{ year }}">{{ year }}</a></li>
         {% endfor %}
       </ul>
     {% endif %}
