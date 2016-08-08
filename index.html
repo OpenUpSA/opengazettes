@@ -4,10 +4,29 @@ layout: default
 
 <div class="home">
 
-  <ul class="post-list">
-    {% for jurisdiction in site.data.jurisdictions %}
-    <li><a href="gazettes/{{ jurisdiction[0] | slugify }}/">{{ jurisdiction[1] }}</a></li>
+  <h2>National Gazettes</h2>
+
+  <ul>
+    {% assign years = site.data.gazettes['ZA'].years | reverse %}
+    {% for year in years %}
+      <li><a href="gazettes/ZA/{{ year }}">{{ year }}</a></li>
     {% endfor %}
   </ul>
+
+  <h2>Provincial Gazettes</h2>
+
+  {% for jurisdiction in site.data.jurisdictions %}
+    {% assign code = jurisdiction[0] %}
+    {% if code != 'ZA' %}
+      <h3>{{ jurisdiction[1] }}</h3>
+
+      <ul>
+        {% assign years = site.data.gazettes[code].years | reverse %}
+        {% for year in years %}
+          <li><a href="gazettes/{{ jurisdiction[0] | slugify }}/{{ year }}">{{ year }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endfor %}
 
 </div>
