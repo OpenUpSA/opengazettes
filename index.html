@@ -15,18 +15,32 @@ layout: default
 
   <h2>Provincial Gazettes</h2>
 
-  {% for jurisdiction in site.data.jurisdictions %}
-    {% assign code = jurisdiction[0] %}
-    {% if code != 'ZA' %}
-      <h3>{{ jurisdiction[1] }}</h3>
+  <div class="row">
+    <div class="col-sm-6">
 
-      <ul>
-        {% assign years = site.data.gazettes[code].years | reverse %}
-        {% for year in years %}
-          <li><a href="gazettes/{{ code }}/{{ year }}">{{ year }}</a></li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  {% endfor %}
+      {% assign breakat = site.data.jurisdictions | size | minus: 1 | divided_by: 2 | floor %}
+      {% for jurisdiction in site.data.jurisdictions %}
+        {% assign code = jurisdiction[0] %}
+
+        {% if code == 'ZA' %}
+          {% continue %}
+        {% endif %}
+
+        <h3>{{ jurisdiction[1] }}</h3>
+
+        <ul>
+          {% assign years = site.data.gazettes[code].years | reverse %}
+          {% for year in years %}
+            <li><a href="gazettes/{{ code }}/{{ year }}">{{ year }}</a></li>
+          {% endfor %}
+        </ul>
+
+        {% if forloop.index0 == breakat %}
+          </div><div class="col-sm-6">
+        {% endif %}
+      {% endfor %}
+
+    </div>
+  </div>
 
 </div>
