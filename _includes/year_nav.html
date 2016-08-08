@@ -1,0 +1,12 @@
+<ul class="year-nav">
+  {% assign years = site.data.gazettes[page.jurisdiction].years | reverse %}
+  {% for year in years %}
+    <li>
+      {% if page.year == year %}
+        {{ year }}
+      {% else %}
+        <a href="{{ year }}">{{ year }}</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

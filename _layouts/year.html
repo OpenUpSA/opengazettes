@@ -5,6 +5,8 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
+
+    {% include year_nav.html %}
   </header>
 
   <div class="post-content">
@@ -32,5 +34,9 @@ layout: default
       {% if forloop.last %}</ul>{% endif %}
     {% endfor %}
   </div>
+
+  <footer>
+    {% include year_nav.html %}
+  </footer>
 
 </article>
