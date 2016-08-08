@@ -64,7 +64,7 @@ def build_index():
     for line in open('gazette-index-latest.jsonlines'):
         gazette = json.loads(line)
         juri = gazette['jurisdiction_code']
-        year = int(gazette['publication_date'].split('-')[0])
+        year = gazette['publication_date'].split('-')[0]
         if 'archive_url' not in gazette:
             gazette['archive_url'] = 'http://code4sa-gazettes.s3.amazonaws.com/archive/' + gazette['archive_path']
 
