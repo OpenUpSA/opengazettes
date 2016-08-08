@@ -8,11 +8,8 @@ layout: default
   </header>
 
   <div class="post-content">
-    {% capture years %}
-      {% for year in site.data.gazettes[page.jurisdiction] %} {{ year[0] }}{% endfor %}
-    {% endcapture %}
-    {% assign years = years | split:' ' | sort | reverse %}
     <ul>
+    {% assign years = site.data.gazettes[page.jurisdiction].years | reverse %}
     {% for year in years %}
       <li><a href="{{ year }}">{{ year }}</a></li>
     {% endfor %}

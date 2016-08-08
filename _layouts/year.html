@@ -8,7 +8,7 @@ layout: default
   </header>
 
   <div class="post-content">
-    {% for gazette in site.data.gazettes[page.jurisdiction][page.year] %}
+    {% for gazette in site.data.gazettes[page.jurisdiction].gazettes[page.year] %}
       {% assign currentdate = gazette.publication_date | date: "%B %Y" %}
 
       {% if currentdate != date %}
