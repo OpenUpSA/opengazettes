@@ -1,7 +1,8 @@
 # Gazette listing
 
 This is a simple Jekyll website listing South African Gazettes that [Code for South Africa](http://codes4sa.org)
-has scraped and [indexed and stored in S3](http://code4sa-gazettes.s3.amazonaws.com/archive/index/gazette-index-latest.jsonlines).
+has scraped and [indexed and stored in S3](http://code4sa-gazettes.s3.amazonaws.com/archive/index/gazette-index-latest.jsonlines) as part
+of our [gazette liberation project](https://github.com/Code4SA/gazettescrape).
 
 The structure is simple. Each jurisdiction (province) and year has an entry in the ``_gazettes`` directory, which
 Jekyll treats as a collection. All the gazette info is taken from ``_data/gazettes.json`` which is grouped
