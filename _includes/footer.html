@@ -4,19 +4,26 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
 
-        <h2>{{ site.title }}</h2>
-
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-7">
+            <h2>{{ site.title }}</h2>
+            <p>{{ site.description }}</p>
 
             <ul class="list-unstyled">
-              <li>{{ site.title }}</li>
               <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+              <li><a href="http://code4sa-gazettes.s3.amazonaws.com/archive/recently-added.atom" type="application/rss+xml" rel="alternate">Atom Feed</a></li>
+              <li>&nbsp;</li>
+              <li><a href="https://github.com/Code4SA/opengazettes">Open Gazettes on GitHub</a></li>
+              <li><a href="https://github.com/Code4SA/gazettescrape">Gazette Scraping on GitHub</a></li>
             </ul>
-
           </div>
-          <div class="col-sm-6">
-            <p>{{ site.description }}</p>
+
+          <div class="col-sm-5 text-right">
+            <div class="pull-right">
+              <a href="http://code4sa.org"><img src="{{ "/img/logo.png" | prepend: site.baseurl }}" class="c4sa-logo img-responsive" alt="Code for SA"></a>
+              <br>
+              <a href="https://indigotrust.org.uk/"><img src="{{ "/img/indigo_trust.png" | prepend: site.baseurl }}" class="indigo-strust img-responsive" alt="Indigo Trust"></a>
+            </div>
           </div>
 
         </div>

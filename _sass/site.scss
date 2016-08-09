@@ -4,9 +4,18 @@
         border-bottom: 1px solid $grey-color-light;
     }
 
+    .c4sa-logo {
+        height: 40px;
+        margin-top: 5px;
+    }
+
     .navbar-brand {
         font-size: 26px;
         font-weight: 300;
+
+        @media (max-width: $screen-xs-max) {
+            font-size: 20px;
+        }
 
         &,
         &:visited {
@@ -19,6 +28,15 @@
     border-top: 1px solid $grey-color-light;
     margin-top: 30px;
     padding: 30px;
+
+    h2 {
+        margin-top: 0px;
+    }
+
+    .c4sa-logo {
+        height: 75px;
+        float: right;
+    }
 }
 
 .year-nav {
