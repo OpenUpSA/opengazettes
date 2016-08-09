@@ -7,13 +7,15 @@
         <div class="row">
           <div class="col-sm-7">
             <h2>{{ site.title }}</h2>
+            <p>{{ site.description }}</p>
 
             <ul class="list-unstyled">
               <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-              <li><a href="https://github.com/Code4SA/opengazettes">Contribute on GitHub</a></li>
+              <li><a href="http://code4sa-gazettes.s3.amazonaws.com/archive/recently-added.atom" type="application/rss+xml" rel="alternate">Atom Feed</a></li>
+              <li>&nbsp;</li>
+              <li><a href="https://github.com/Code4SA/opengazettes">Open Gazettes on GitHub</a></li>
+              <li><a href="https://github.com/Code4SA/gazettescrape">Gazette Scraping on GitHub</a></li>
             </ul>
-
-            <p>{{ site.description }}</p>
           </div>
 
           <div class="col-sm-5 text-right">
