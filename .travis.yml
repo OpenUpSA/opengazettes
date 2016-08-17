@@ -1,6 +1,6 @@
 language: python
-python:
-  - "2.7"
+ruby:
+  - "2.1.6"
 script: bin/build-index.sh
 after_success:
   - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "gh-pages" ] && openssl aes-256-cbc -K $encrypted_152ca5bd4b01_key -iv $encrypted_152ca5bd4b01_iv -in deploy_key.enc -out deploy_key -d && bin/deploy.sh'

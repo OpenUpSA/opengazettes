@@ -4,5 +4,4 @@ set -e
 
 curl http://code4sa-gazettes.s3.amazonaws.com/archive/index/gazette-index-latest.jsonlines -O
 python bin/build-index.py
-bundle install
 bundle exec jekyll build
