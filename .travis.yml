@@ -1,4 +1,4 @@
-language: python
+language: ruby
 ruby:
   - "2.1.6"
 script: bin/build-index.sh
