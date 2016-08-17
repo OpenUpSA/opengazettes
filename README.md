@@ -20,9 +20,13 @@ To update this list from the production index:
 
     curl http://code4sa-gazettes.s3.amazonaws.com/archive/index/gazette-index-latest.jsonlines -O
     python build-index.py
-    git add _data _gazettes
-    git commit -m "Updated index"
-    git push
+
+# Build process
+
+The website is built by GitHub pages based on the Gazette information already in the repository.
+
+[Travis](https://travis-ci.org/Code4SA/opengazettes) can also run a build, which downloads the latest
+Gazette index from S3 and then pushes that to GitHub (which produces an updated website).
 
 # License
 

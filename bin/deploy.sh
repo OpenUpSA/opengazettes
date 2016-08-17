@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+echo "Deploying to GitHub"
+
 # add git auth
 eval "$(ssh-agent -s)" #start the ssh agent
 chmod 600 deploy_key # this key should have push access
