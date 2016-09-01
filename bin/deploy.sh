@@ -5,7 +5,8 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "build" ]; t
   # switch to master branch
   git config user.email "<webapps@code4sa.org>"
   git config user.name "Open Gazettes (via TravisCI)"
-  git checkout master
+  git fetch origin master
+  git checkout FETCH_HEAD
 
   # update the index file and rebuild site data
   curl http://code4sa-gazettes.s3.amazonaws.com/archive/index/gazette-index-latest.jsonlines -O
@@ -29,7 +30,7 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "build" ]; t
   ssh-add deploy_key
 
   git remote set-url origin git@github.com:code4sa/opengazettes.git
-  git push
+  git push origin -u master
 else
   echo "Ignoring pull request or non-build branch"
   exit 0
