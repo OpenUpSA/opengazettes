@@ -19,7 +19,7 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "build" ]; t
 
   # save changes
   git add _data _gazettes
-  git commit -m "Updated index via TravisCI"
+  git commit -m "Updated index via TravisCI" || exit 0
 
   # now update gh-pages branch on github
   echo "Deploying to GitHub"
