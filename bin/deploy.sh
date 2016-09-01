@@ -7,6 +7,7 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "build" ]; t
   git config user.name "Open Gazettes (via TravisCI)"
   git fetch origin master
   git checkout FETCH_HEAD
+  git checkout -b master
 
   # update the index file and rebuild site data
   curl http://code4sa-gazettes.s3.amazonaws.com/archive/index/gazette-index-latest.jsonlines -O
