@@ -25,7 +25,7 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "build" ]; t
 
   # add git auth
   eval "$(ssh-agent -s)" #start the ssh agent
-  openssl aes-256-cbc -K $encrypted_152ca5bd4b01_key -iv $encrypted_152ca5bd4b01_iv -in deploy_key.enc -out deploy_key -d && bin/build-index.sh
+  openssl aes-256-cbc -K $encrypted_152ca5bd4b01_key -iv $encrypted_152ca5bd4b01_iv -in deploy_key.enc -out deploy_key -d
   chmod 600 deploy_key # this key should have push access
   ssh-add deploy_key
 
