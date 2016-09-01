@@ -6,3 +6,4 @@ This branch is a special branch to update the opengazettes.org.za website. It is
 * update the gazette-index-latest.jsonlines file
 * update the website data as appropriate
 * commit and push to github
+
