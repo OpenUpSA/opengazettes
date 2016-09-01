@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -e -x
 
 if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "build" ]; then
   # switch to master branch
