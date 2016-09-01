@@ -1,9 +1,11 @@
+font-family: 'Open Sans', sans-serif;
+font-weight: 100;
+
 .site-header {
     .navbar {
         border-top: 5px solid $grey-color-dark;
         border-bottom: 1px solid $grey-color-light;
     }
-
     .navbar-brand {
         font-size: 26px;
         font-weight: 300;
@@ -58,4 +60,8 @@
             font-weight: 500;
         }
     }
+}
+
+.introduction {
+    background-color:#efefef;
 }
