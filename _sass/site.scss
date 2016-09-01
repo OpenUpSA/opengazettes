@@ -1,7 +1,6 @@
-font-family: 'Open Sans', sans-serif;
-font-weight: 100;
-
 .site-header {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
     .navbar {
         border-top: 5px solid $grey-color-dark;
         border-bottom: 1px solid $grey-color-light;
@@ -25,6 +24,8 @@ font-weight: 100;
     border-top: 1px solid $grey-color-light;
     margin-top: 30px;
     padding: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
 
     h2 {
         margin-top: 0px;
@@ -63,5 +64,12 @@ font-weight: 100;
 }
 
 .introduction {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
     background-color:#efefef;
+}
+
+.join_intro {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
 }
