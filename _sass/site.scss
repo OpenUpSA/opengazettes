@@ -124,8 +124,54 @@ button:hover {
         font-weight: 600;
         color: #0067c5;
     }
+
+}
+
+.gazettes_nav {
+        
+    .gazettes_nav_btn {
+            
+        background-color: #0067c5;
+        border: none;
+        color: #ffffff;
+        padding: 10px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 200px;
+    }
+
+    .btn_wc {
+        background-image: url(/img/provinces/westerncape.jpg);
+    }
+    .btn_gt {
+        background-image: url(/img/provinces/gauteng.jpg);
+    }
+    .btn_kzn {
+        background-image: url(/img/provinces/kwazulunatal.jpg);
+    }
+    .btn_ec {
+        background-image: url(/img/provinces/easterncape.jpg);
+    }
+    .btn_fs {
+        background-image: url(/img/provinces/freestate.jpg);
+    }
+    .btn_nw {
+        background-image: url(/img/provinces/northwest.jpg);
+    }
+    .btn_nc {
+        background-image: url(/img/provinces/northerncape.jpg);
+    }
+    .btn_mp {
+        background-image: url(/img/provinces/mpumalanga.jpg);
+    }
+    .btn_lim {
+        background-image: url(/img/provinces/limpopo.jpg);
+    }
+
 }
 
 .join_intro {
-
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
