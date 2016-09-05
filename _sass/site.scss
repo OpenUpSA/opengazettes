@@ -23,17 +23,14 @@ button:hover {
 }
 
 .site-header {
-
     .navbar {
         background-color: #000000;
     }
 
     .navlist {
-        padding-top: 15px;
     }
     .navlist ul {
         list-style-type:none;
-        text-align: center;
     }
 
     .navlist a {
@@ -47,12 +44,30 @@ button:hover {
     .byline {
         clear: both;
         color: #fff;
-        line-height: 0.5em;
+        line-height: 1em;
         font-size: 12px;
-        margin-left: 58px;
-        margin-bottom: 10px;
+        margin-left: 2px;
     }
-
+    .counter {
+        text-align: center;
+    }
+    .box-num {
+        font-weight: 700;
+        font-size: 26px;
+        text-align:center;
+        padding: 2px 14px;
+        margin: 0px 5px;
+        border: 1px solid #0067c5;
+        color: #0067c5;
+    }
+    .box-byline {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 11px;
+    }
+    .liberate {
+        text-align: center;
+    }
     .navbar-brand {
         color: #ffffff!important;
         font-size: 22px;
@@ -135,6 +150,10 @@ button:hover {
         width:100%;
     }
 
+    .banner {
+        font-size: 30px;
+    }
+
     margin-top: 30px;
     margin-bottom: 30px;
 
@@ -179,41 +198,51 @@ button:hover {
     .btn_nat {
         background-image: url(/img/provinces/national_4.jpg);
         background-position: center;
+        background-size: cover;
     }    
     .btn_wc {
         background-image: url(/img/provinces/westerncape.jpg);
         background-position: center;
+        background-size: cover;
     }
     .btn_gt {
         background-image: url(/img/provinces/gauteng.jpg);
         background-position: center;
+        background-size: cover;
     }
     .btn_kzn {
         background-image: url(/img/provinces/kwazulunatal.jpg);
         background-position: center;
+        background-size: cover;
     }
     .btn_ec {
         background-image: url(/img/provinces/easterncape.jpg);
         background-position: center;
+        background-size: cover;
     }
     .btn_fs {
         background-image: url(/img/provinces/freestate.jpg);
         background-position: center;
+        background-size: cover;
     }
     .btn_nw {
         background-image: url(/img/provinces/northwest.jpg);
         background-position: center;
+        background-size: cover;
     }
     .btn_nc {
         background-image: url(/img/provinces/northerncape.jpg);
+        background-size: cover;
     }
     .btn_mp {
         background-image: url(/img/provinces/mpumalanga.jpg);
         background-position: center;
+        background-size: cover;
     }
     .btn_lim {
         background-image: url(/img/provinces/limpopo.jpg);
         background-position: center;
+        background-size: cover;
     }
 
 }
