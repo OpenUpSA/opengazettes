@@ -26,21 +26,31 @@ button:hover {
 
     .navbar {
         background-color: #000000;
-        border-top: 5px solid $grey-color-dark;
-        border-bottom: 1px solid $grey-color-light;
-        background-image: url(/img/icon-openbook.png);
-        background-repeat: no-repeat;
-        background-position: 22px 8px;
-        background-size: 35px;
     }
 
-    .navitems {
-        float:left;
+    .navlist {
+        padding-top: 15px;
+    }
+    .navlist ul {
+        list-style-type:none;
+        text-align: center;
+    }
+
+    .navlist a {
         color: #fff;
-        font-weight: 400;
-        padding-top: 16px;
-        padding-left: 25px;
-        text-transform: uppercase;
+    }
+
+    .navlist ul li {
+        display: inline;
+    }
+
+    .byline {
+        clear: both;
+        color: #fff;
+        line-height: 0.5em;
+        font-size: 12px;
+        margin-left: 58px;
+        margin-bottom: 10px;
     }
 
     .navbar-brand {
@@ -57,6 +67,7 @@ button:hover {
             color: $grey-color-dark;
         }
     }
+
     .header-cta {
         p.cta-tagline {
             clear:both;

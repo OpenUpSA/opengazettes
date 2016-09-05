@@ -2,10 +2,26 @@
   <nav class="navbar">
     <div class="container">
 
-      <div class="navbar-header">
-          <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
-          <p class="navitems">Join</p><p class="navitems">About</p>
-      </div>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="/img/icon-openbook.png" width="50px" style="float:left;margin-right:5px;" />
+            <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+        </div>
+
+        <div class="col-md-6">
+            <div class="navlist">
+                <ul>
+                  <a href="#" class="col-md-2"><li>About</li></a>
+                  <a href="#" class="col-md-2"><li>Join</li></a>
+                  <a href="#" class="col-md-2"><li>Contact</li></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row byline">
+        <p>The biggest freely available collection of gazettes in South Africa</p>
+    </div>
 
     </div>
   </nav>
