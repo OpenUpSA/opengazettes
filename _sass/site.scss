@@ -69,6 +69,12 @@ button:hover {
             margin-top: 12px;
         }
     }
+
+    .cta p {
+            margin-top: 30px;
+            font-size: 24px;
+            text-align: center;
+    }
 }
 
 .site-footer {
@@ -129,11 +135,6 @@ button:hover {
 }
 
 .gazettes_nav {
-
-    .gazettes_h {
-        text-align:center;
-        font-weight: 400;
-    }
         
     .gazettes_nav_btn {
             
@@ -148,8 +149,14 @@ button:hover {
         border-radius: 5px;
     }
 
+    .btn_text {
+        background-color: rgba(0, 0, 0, 0.71);
+        text-align:left;
+        padding: 5px;
+    }
+
     .btn_p {
-        color: #fff;
+        color: #ffffff;
         font-size: 20px;
         font-family: 'Lato', sans-seif;
     }
@@ -157,33 +164,45 @@ button:hover {
     .btn_p:hover {
         text-decoration: none;
     }
-    
+
+    .btn_nat {
+        background-image: url(/img/provinces/national_4.jpg);
+        background-position: center;
+    }    
     .btn_wc {
         background-image: url(/img/provinces/westerncape.jpg);
+        background-position: center;
     }
     .btn_gt {
         background-image: url(/img/provinces/gauteng.jpg);
+        background-position: center;
     }
     .btn_kzn {
         background-image: url(/img/provinces/kwazulunatal.jpg);
+        background-position: center;
     }
     .btn_ec {
         background-image: url(/img/provinces/easterncape.jpg);
+        background-position: center;
     }
     .btn_fs {
         background-image: url(/img/provinces/freestate.jpg);
+        background-position: center;
     }
     .btn_nw {
         background-image: url(/img/provinces/northwest.jpg);
+        background-position: center;
     }
     .btn_nc {
         background-image: url(/img/provinces/northerncape.jpg);
     }
     .btn_mp {
         background-image: url(/img/provinces/mpumalanga.jpg);
+        background-position: center;
     }
     .btn_lim {
         background-image: url(/img/provinces/limpopo.jpg);
+        background-position: center;
     }
 
 }
