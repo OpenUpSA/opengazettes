@@ -156,11 +156,13 @@ button:hover {
 .introduction {
     
     .banner img {
-        width:100%;
+        width: 117%;
+        margin-left: -60px;
     }
 
-    .banner {
+    .banner p {
         font-size: 30px;
+        font-weight: 700;
     }
 
     margin-top: 30px;
@@ -254,6 +256,22 @@ button:hover {
         background-size: cover;
     }
 
+}
+
+.img-center {
+    text-align:center;
+}
+
+.join-title {
+    background-color: #0067c5;
+    padding: 15px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:-1px;
 }
 
 .join_intro {
