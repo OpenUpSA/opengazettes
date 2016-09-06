@@ -26,27 +26,36 @@ button:hover {
     .navbar {
         background-color: #000000;
     }
-
-    .navlist {
+    .img-ico img {
+        padding-top: 9px;
     }
     .navlist ul {
         list-style-type:none;
+        padding-top: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 12px;
     }
-
     .navlist a {
+        color: #ccc;
+    }
+    .navlist a:hover {
+        text-decoration: none;
         color: #fff;
     }
-
     .navlist ul li {
         display: inline;
+        padding-right: 15px;
     }
-
     .byline {
         clear: both;
         color: #fff;
         line-height: 1em;
-        font-size: 12px;
-        margin-left: 2px;
+        font-size: 14px;
+        margin-left: 57px;
+    }
+    .byline p {
+        margin-top:-16px;
     }
     .counter {
         text-align: center;
