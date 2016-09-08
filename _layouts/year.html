@@ -1,34 +1,36 @@
 ---
 layout: default
 ---
-<article class="jurisdiction">
+<div class="col-md-8 col-md-offset-2">
+    <article class="jurisdiction">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
+      <header class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
 
-    {% include year_nav.html %}
-  </header>
+        {% include year_nav.html %}
+      </header>
 
-  <div class="post-content">
-    {% for gazette in site.data.gazettes[page.jurisdiction].gazettes[page.year] %}
-      {% assign currentdate = gazette.publication_date | date: "%B %Y" %}
+      <div class="post-content">
+        {% for gazette in site.data.gazettes[page.jurisdiction].gazettes[page.year] %}
+          {% assign currentdate = gazette.publication_date | date: "%B %Y" %}
 
-      {% if currentdate != date %}
-        {% unless forloop.first %}</ul>{% endunless %}
-        <h2>{{ currentdate }}</h2>
-        <ul>
-        {% assign date = currentdate %}
-      {% endif %}
+          {% if currentdate != date %}
+            {% unless forloop.first %}</ul>{% endunless %}
+            <h2>{{ currentdate }}</h2>
+            <ul>
+            {% assign date = currentdate %}
+          {% endif %}
 
-      <li>
-        <a href="{{ gazette.archive_url }}">{{ gazette.issue_title }}</a>
-      </li>
-      {% if forloop.last %}</ul>{% endif %}
-    {% endfor %}
-  </div>
+          <li>
+            <a href="{{ gazette.archive_url }}">{{ gazette.issue_title }}</a>
+          </li>
+          {% if forloop.last %}</ul>{% endif %}
+        {% endfor %}
+      </div>
 
-  <footer>
-    {% include year_nav.html %}
-  </footer>
+      <footer>
+        {% include year_nav.html %}
+      </footer>
 
-</article>
+    </article>
+</div>
