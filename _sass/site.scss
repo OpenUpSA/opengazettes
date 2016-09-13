@@ -5,18 +5,17 @@ body {
 }
 
 button {
-    background-color: #0067c5;
-    border: none;
-    color: #ffffff;
-    padding: 10px;
-    font-weight:600;
-    border: 2px solid #0067c5;
-}
-
-button:hover {
     background-color: #fff;
     color: #0067c5;
     border: 2px solid #0067c5;
+    padding: 10px;
+    font-weight:600;
+}
+
+button:hover {
+    background-color: #0067c5;
+    border: 2px solid #0067c5;
+    color: #ffffff;
 }
 
 .text-standout {
@@ -29,7 +28,7 @@ button:hover {
     background-color: #eeeeee;
 
     .navbar {
-        background-color: #000000;
+        background-color: #333;
         margin-bottom: 10px;
     }
 
@@ -167,17 +166,31 @@ button:hover {
     }
 }
 
-.introduction {
-    .banner p {
+h2, .h2 {
+    font-weight: 600;
+    color: #333;
+}
+
+.banner p {
         font-size: 30px;
-        font-weight: 700;
+        font-weight: 600;
     }
+
+.introduction {
+
     margin-top: 30px;
     margin-bottom: 30px;
     .cta a {
         font-weight: 600;
         color: #0067c5;
     }
+}
+
+.page-tag {
+    font-size: 25px;
+    font-weight: 400;
+    color: #333;
+    margin-left: -15px;
 }
 
 .gazettes_nav {
@@ -271,9 +284,9 @@ button:hover {
 }
 
 .join-title {
-    background-color: #0067c5;
+    background-color: #fff;
     padding: 15px;
-    color: #fff;
+    color: #0067c5;
     font-weight: 700;
     font-size: 30px;
     width: 60%;
@@ -283,8 +296,8 @@ button:hover {
 }
 
 .join-title:hover {
-    background-color:#fff;
-    color: #0067c5;
+    background-color:#0067c5;
+    color: #fff;
     border: 2px solid #0067c5;
 }
 .banner a:hover {
@@ -294,6 +307,10 @@ button:hover {
 .join_intro {
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+.fa-picture-o {
+    color: #777777;
 }
 
 @media screen and (max-width: 768px) {
@@ -347,6 +364,7 @@ button:hover {
 // free-text article pages
 article {
     section {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
+        margin-top: 20px;
     }
 }
