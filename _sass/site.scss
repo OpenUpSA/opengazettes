@@ -5,18 +5,17 @@ body {
 }
 
 button {
-    background-color: #0067c5;
-    border: none;
-    color: #ffffff;
-    padding: 10px;
-    font-weight:600;
-    border: 2px solid #0067c5;
-}
-
-button:hover {
     background-color: #fff;
     color: #0067c5;
     border: 2px solid #0067c5;
+    padding: 10px;
+    font-weight:600;
+}
+
+button:hover {
+    background-color: #0067c5;
+    border: 2px solid #0067c5;
+    color: #ffffff;
 }
 
 .text-standout {
@@ -29,7 +28,7 @@ button:hover {
     background-color: #eeeeee;
 
     .navbar {
-        background-color: #000000;
+        background-color: #333;
         margin-bottom: 10px;
     }
 
@@ -126,6 +125,10 @@ button:hover {
     }
 }
 
+header {
+    margin-bottom: 20px;
+}
+
 .site-footer {
     background-color: #f7f7f7;
     margin-top: 30px;
@@ -167,17 +170,39 @@ button:hover {
     }
 }
 
-.introduction {
-    .banner p {
+h2, .h2 {
+    font-weight: 600;
+    color: #333;
+}
+
+.banner p {
         font-size: 30px;
-        font-weight: 700;
+        font-weight: 600;
     }
+
+.introduction {
+
     margin-top: 30px;
     margin-bottom: 30px;
     .cta a {
         font-weight: 600;
         color: #0067c5;
     }
+}
+
+.page-tag {
+    font-size: 25px;
+    font-weight: 400;
+    color: #333;
+    margin-left: -15px;
+}
+
+.counter {
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+    float:right;
+    margin-top: 5px;
 }
 
 .gazettes_nav {
@@ -271,9 +296,9 @@ button:hover {
 }
 
 .join-title {
-    background-color: #0067c5;
+    background-color: #fff;
     padding: 15px;
-    color: #fff;
+    color: #0067c5;
     font-weight: 700;
     font-size: 30px;
     width: 60%;
@@ -283,8 +308,8 @@ button:hover {
 }
 
 .join-title:hover {
-    background-color:#fff;
-    color: #0067c5;
+    background-color:#0067c5;
+    color: #fff;
     border: 2px solid #0067c5;
 }
 .banner a:hover {
@@ -296,6 +321,14 @@ button:hover {
     margin-bottom: 30px;
 }
 
+.banner a .fa {
+    font-size: 26px;
+}
+
+fa-chevron-circle-right {
+    font-size: 26px!important;
+}
+
 @media screen and (max-width: 768px) {
     .row {
         margin-left: 0px;
@@ -303,6 +336,9 @@ button:hover {
     }
     .site-header .byline {
         margin-left: 72px;
+    }
+    .page-tag {
+        margin-left: 0px;
     }
 }
 
@@ -335,8 +371,18 @@ button:hover {
     .site-header .img-ico img {
         padding-top: 0px;
     }
-    .introduction .banner p {
-        font-size: 17px;
+    .banner p {
+        font-size: 16px;
+    }
+    .banner a .fa {
+    font-size: 16px;
+    }
+    .page-tag {
+        margin-left: 0px;
+    }
+    .counter {
+        float:left;
+        font-size: 18px;
     }
 }
 
@@ -347,6 +393,7 @@ button:hover {
 // free-text article pages
 article {
     section {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
+        margin-top: 20px;
     }
 }
