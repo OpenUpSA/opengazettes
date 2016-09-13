@@ -125,6 +125,10 @@ button:hover {
     }
 }
 
+header {
+    margin-bottom: 20px;
+}
+
 .site-footer {
     background-color: #f7f7f7;
     margin-top: 30px;
@@ -321,6 +325,9 @@ h2, .h2 {
     .site-header .byline {
         margin-left: 72px;
     }
+    .page-tag {
+        margin-left: 0px;
+    }
 }
 
 
@@ -352,8 +359,11 @@ h2, .h2 {
     .site-header .img-ico img {
         padding-top: 0px;
     }
-    .introduction .banner p {
+    .banner p {
         font-size: 17px;
+    }
+    .page-tag {
+        margin-left: 0px;
     }
 }
 
