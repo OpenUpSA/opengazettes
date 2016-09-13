@@ -61,15 +61,29 @@ def build_index():
             'gazettes': defaultdict(list)
         }
 
+    stats = {
+        'count': 0,
+        'earliest_year': 9999,
+        'latest_year': 0,
+        'years': defaultdict(int),
+    }
+
     for line in open('gazette-index-latest.jsonlines'):
         gazette = json.loads(line)
         juri = gazette['jurisdiction_code']
         year = gazette['publication_date'].split('-')[0]
+        iyear = int(year)
         if 'archive_url' not in gazette:
             gazette['archive_url'] = 'http://code4sa-gazettes.s3.amazonaws.com/archive/' + gazette['archive_path']
 
         gazettes[juri]['gazettes'][year].append(gazette)
         gazettes[juri]['years'].add(year)
+
+        stats['count'] += 1
+        stats['earliest_year'] = min([stats['earliest_year'], iyear])
+        stats['latest_year'] = max([stats['latest_year'], iyear])
+        # for jekyll, years in keys should be strings
+        stats['years'][year] += 1
 
     for juri in gazettes.iterkeys():
         write_jurisdiction(juri, gazettes[juri]['gazettes'])
@@ -79,6 +93,8 @@ def build_index():
         juris['years'] = sorted(list(juris['years']))
         for items in juris['gazettes'].itervalues():
             items.sort(key=lambda g: g['publication_date'])
+
+    gazettes['stats'] = stats
 
     with open('_data/gazettes.json', 'w') as f:
         json.dump(gazettes, f)
