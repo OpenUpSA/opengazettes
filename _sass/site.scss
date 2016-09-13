@@ -313,8 +313,12 @@ h2, .h2 {
     margin-bottom: 30px;
 }
 
-.fa-picture-o {
-    color: #777777;
+.banner a .fa {
+    font-size: 26px;
+}
+
+fa-chevron-circle-right {
+    font-size: 26px!important;
 }
 
 @media screen and (max-width: 768px) {
@@ -360,7 +364,10 @@ h2, .h2 {
         padding-top: 0px;
     }
     .banner p {
-        font-size: 17px;
+        font-size: 16px;
+    }
+    .banner a .fa {
+    font-size: 16px;
     }
     .page-tag {
         margin-left: 0px;
