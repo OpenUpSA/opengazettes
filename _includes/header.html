@@ -24,20 +24,22 @@
     </div>
   </nav>
 
-  <!--
     <div class="container">
         <div class="row">
-            <div class="counter">
-                <p><i class="fa fa-newspaper-o" aria-hidden="true"></i> XX gazettes from 2000 to 2012</p>
+
+          <div class="col-md-6">
+            <div class="page-tag">
+                <p>{{ page.pagetag }}</p>
             </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="counter">
+                <p><i class="fa fa-history" aria-hidden="true"></i> {{ site.data.gazettes.stats.count }} from  {{ site.data.gazettes.stats.earliest_year }} to {{ site.data.gazettes.stats.latest_year }} </p>
+            </div>
+          </div>
+
         </div>
     </div>
-  -->
-
-  <div class="container">
-    <div class="page-tag">
-      <p>{{ page.pagetag }}</p>
-    </div>
-  </div>
 
 </header>
