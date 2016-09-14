@@ -123,17 +123,10 @@ button:hover {
             font-size: 24px;
             text-align: center;
     }
-    .cta-message {
-            font-size: 20px;
-    }
 }
 
 header {
     margin-bottom: 20px;
-}
-
-.cta-message {
-    margin-top: 60px;
 }
 
 .site-footer {
@@ -183,16 +176,14 @@ h2, .h2 {
 }
 
 .banner p {
-        font-size: 25px;
+        font-size: 30px;
         font-weight: 600;
     }
 
 .introduction {
-    padding: 30px 0px;
-    background-color: #e7e7e7;
-    margin-top: -20px;
-    margin-left: -50px;
-    margin-right: -50px;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
     .cta a {
         font-weight: 600;
         color: #0067c5;
@@ -215,8 +206,6 @@ h2, .h2 {
 }
 
 .gazettes_nav {
-
-    margin-top: 60px;
         
     .gazettes_nav_btn {
         background-color: #0067c5;
@@ -341,13 +330,6 @@ fa-chevron-circle-right {
 }
 
 @media screen and (max-width: 768px) {
-    .cta-message {
-
-    }
-}
-
-
-@media screen and (max-width: 768px) {
     .row {
         margin-left: 0px;
         margin-right:0px;
@@ -401,9 +383,6 @@ fa-chevron-circle-right {
     .counter {
         float:left;
         font-size: 18px;
-    }
-    .cta-message {
-        margin-top: 10px;
     }
 }
 
