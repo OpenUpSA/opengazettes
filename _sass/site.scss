@@ -17,6 +17,420 @@ button:hover {
     border: 2px solid #0067c5;
     color: #ffffff;
 }
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+button {
+    background-color: #fff;
+    color: #0067c5;
+    border: 2px solid #0067c5;
+    padding: 10px;
+    font-weight:600;
+}
+
+button:hover {
+    background-color: #0067c5;
+    border: 2px solid #0067c5;
+    color: #ffffff;
+}
+
+.text-standout {
+    color: #0067c5;
+    font-weight:600;
+}
+
+.site-header {
+    
+    background-color: #eeeeee;
+
+    .navbar {
+        background-color: #333;
+        margin-bottom: 10px;
+    }
+
+    .img-ico img {
+        padding-top: 9px;
+    }
+
+    .title-wrap img {
+        float:left;
+        margin-right:5px;
+    }
+
+    .navlist ul {
+        list-style-type:none;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 12px;
+        float:right;
+        margin-top:25px;
+    }
+    .navlist a {
+        color: #ccc;
+    }
+    .navlist a:hover {
+        text-decoration: none;
+        color: #fff;
+    }
+    .navlist ul li {
+        display: inline;
+        padding-right: 15px;
+    }
+    .byline {
+        clear: both;
+        color: #fff;
+        line-height: 1em;
+        font-size: 14px;
+        margin-left: 57px;
+        font-weight: 400;
+    }
+    .byline p {
+        margin-top:-16px;
+    }
+    .counter {
+        text-align: center;
+    }
+    .box-num {
+        font-weight: 700;
+        font-size: 26px;
+        text-align:center;
+        padding: 2px 14px;
+        margin: 0px 5px;
+        border: 1px solid #0067c5;
+        color: #0067c5;
+    }
+    .box-byline {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 11px;
+    }
+    .liberate {
+        text-align: center;
+    }
+    .navbar-brand {
+        color: #ffffff!important;
+        font-size: 22px;
+        font-weight: 400;
+
+        @media (max-width: $screen-xs-max) {
+            font-size: 20px;
+        }
+
+        &,
+        &:visited {
+            color: $grey-color-dark;
+        }
+    }
+
+    .header-cta {
+        p.cta-tagline {
+            clear:both;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        p.cta-tagline row col-md-8 p {
+            margin-top: 12px;
+        }
+    }
+    .cta p {
+            margin-top: 30px;
+            font-size: 24px;
+            text-align: center;
+    }
+    .cta-message {
+            font-size: 20px;
+    }
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.cta-message {
+    margin-top: 60px;
+}
+
+.site-footer {
+    background-color: #f7f7f7;
+    margin-top: 30px;
+    padding: 30px;
+    h2 {
+        margin-top: 0px;
+    }
+    .logos {
+        margin-top: 30px;
+    }
+    .logo {
+        width: auto;
+        height: 75px;
+        margin-bottom: 20px;
+    }
+    .footer-govprinters {
+       
+    }
+}
+
+.year-nav {
+    list-style-type: none;
+    padding-left: 0px;
+
+    li {
+        display: inline;
+        margin-right: 15px;
+
+        a,
+        a:visited {
+            color: $link-color;
+        }
+
+        a.active,
+        a.active:visited {
+            color: $text-color;
+            font-weight: 500;
+        }
+    }
+}
+
+h2, .h2 {
+    font-weight: 600;
+    color: #333;
+}
+
+.banner p {
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+.introduction {
+    padding: 30px 0px;
+    background-color: #e7e7e7;
+    margin-top: -20px;
+    margin-left: -50px;
+    margin-right: -50px;
+    .cta a {
+        font-weight: 600;
+        color: #0067c5;
+    }
+}
+
+.page-tag {
+    font-size: 25px;
+    font-weight: 400;
+    color: #333;
+    margin-left: -15px;
+}
+
+.counter {
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+    float:right;
+    margin-top: 5px;
+}
+
+.gazettes_nav {
+
+    margin-top: 60px;
+        
+    .gazettes_nav_btn {
+        background-color: #0067c5;
+        border: none;
+        color: #ffffff;
+        padding: 10px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        width: 100%;
+        height: 200px;
+        border-radius: 5px;
+    }
+
+    .btn_text {
+        background-color: rgba(0, 0, 0, 0.71);
+        text-align:left;
+        padding: 5px;
+    }
+
+    .btn_p {
+        color: #ffffff;
+        font-size: 24px;
+        font-family: 'Lato', sans-seif;
+        line-height: 42px;
+    }
+
+    .btn_p:hover {
+        text-decoration: none;
+    }
+
+    .btn_nat {
+        background-image: url(/img/provinces/national_4.jpg);
+        background-position: center;
+        background-size: cover;
+    }    
+    .btn_wc {
+        background-image: url(/img/provinces/westerncape.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .btn_gt {
+        background-image: url(/img/provinces/gauteng.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .btn_kzn {
+        background-image: url(/img/provinces/kwazulunatal.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .btn_ec {
+        background-image: url(/img/provinces/easterncape.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .btn_fs {
+        background-image: url(/img/provinces/freestate.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .btn_nw {
+        background-image: url(/img/provinces/northwest.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .btn_nc {
+        background-image: url(/img/provinces/northerncape.jpg);
+        background-size: cover;
+    }
+    .btn_mp {
+        background-image: url(/img/provinces/mpumalanga.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .btn_lim {
+        background-image: url(/img/provinces/limpopo.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+}
+
+.img-center {
+    text-align:center;
+}
+.img-center a:hover {
+    text-decoration: none;
+}
+
+.join-title {
+    background-color: #fff;
+    padding: 15px;
+    color: #0067c5;
+    font-weight: 700;
+    font-size: 30px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #0067c5;
+}
+
+.join-title:hover {
+    background-color:#0067c5;
+    color: #fff;
+    border: 2px solid #0067c5;
+}
+.banner a:hover {
+    text-decoration:none;
+}
+
+.join_intro {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.banner a .fa {
+    font-size: 26px;
+}
+
+fa-chevron-circle-right {
+    font-size: 26px!important;
+}
+
+
+@media screen and (max-width: 768px) {
+    .row {
+        margin-left: 0px;
+        margin-right:0px;
+    }
+    .site-header .byline {
+        margin-left: 72px;
+    }
+    .page-tag {
+        margin-left: 0px;
+    }
+}
+
+
+@media screen and (max-width: 679px) {
+    .site-header .navlist ul {
+        clear: both;
+        float: none;
+        text-align: center;
+    }
+    .site-header .byline {
+        margin-left: 0px;
+        text-align: center;
+    }
+    .site-header .byline p {
+        margin-top: -47px;
+    }
+    .navbar-brand {
+        float: none;
+        padding: 0px;
+        font-size: 16px;
+    }
+    .title-wrap {
+        text-align: center;
+    }
+    .site-header .title-wrap img {
+        float:none;
+        margin-right:0px;
+    }
+    .site-header .img-ico img {
+        padding-top: 0px;
+    }
+    .banner p {
+        font-size: 16px;
+    }
+    .banner a .fa {
+    font-size: 16px;
+    }
+    .page-tag {
+        margin-left: 0px;
+    }
+    .counter {
+        float:left;
+        font-size: 18px;
+    }
+    .cta-message {
+        margin-top: 10px;
+    }
+}
+
+.credits p {
+    font-size: 14px;
+}
+
+// free-text article pages
+article {
+    section {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+}
 
 .text-standout {
     color: #0067c5;
@@ -176,13 +590,11 @@ h2, .h2 {
 }
 
 .banner p {
-        font-size: 30px;
+        font-size: 25px;
         font-weight: 600;
     }
 
 .introduction {
-
-    margin-top: 30px;
     margin-bottom: 30px;
     .cta a {
         font-weight: 600;
