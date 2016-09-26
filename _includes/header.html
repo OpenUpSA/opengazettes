@@ -1,45 +1,53 @@
 <header class="site-header">
-  
-  <nav class="navbar">
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
-        <div class="row">
-            <div class="img-ico">
-                <div class="title-wrap">
-                    <img src="/img/icon-openbook.png" width="50px" />
-                    <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
-                </div>
-                <div class="navlist">
-                    <ul>
-                      <a href="/about"><li>About</li></a>
-                      <a href="join"><li>Join</li></a>
-                      <a href="/about#contact-us"><li>Contact</li></a>
-                    </ul>
-                </div>
-            </div>
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" ng-click="navbarCollapsed = !navbarCollapsed">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img alt="logo" src="/img/icon-openbook.png"></a>
+        <a class="navbar-brand" href="/">Open Gazettes South Africa</a>
+      </div>
 
-            <div class="row byline">
-                <p>The biggest freely available collection of gazettes in the country</p>
-            </div>
-        </div>
+      <div uib-collapse="navbarCollapsed" class="navbar-collapse bs-js-navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="http://search.opengazettes.org.za/search">
+              Search
+            </a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+          <li>
+            <a href="/join">Join</a>
+          </li>
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-    <div class="container">
-        <div class="row">
+  <div class="container">
+      <div class="row">
 
-          <div class="col-md-6">
-            <div class="page-tag">
-                <p>{{ page.pagetag }}</p>
-            </div>
+        <div class="col-md-6">
+          <div class="byline">
+            <p>The biggest freely available collection of gazettes in the country</p>
           </div>
-
-          <div class="col-md-6">
-            <div class="counter">
-                <p><i class="fa fa-history" aria-hidden="true"></i> {{ site.data.gazettes.stats.count }} gazettes from  {{ site.data.gazettes.stats.earliest_year }} to {{ site.data.gazettes.stats.latest_year }} </p>
-            </div>
-          </div>
-
         </div>
-    </div>
 
+        <div class="col-md-6">
+          <div class="counter">
+              <p><i class="fa fa-history" aria-hidden="true"></i> {{ site.data.gazettes.stats.count }} gazettes from  {{ site.data.gazettes.stats.earliest_year }} to {{ site.data.gazettes.stats.latest_year }} </p>
+          </div>
+        </div>
+
+      </div>
+  </div>
 </header>

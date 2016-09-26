@@ -2,6 +2,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 button {
@@ -24,52 +26,52 @@ button:hover {
 }
 
 .site-header {
-    
-    background-color: #eeeeee;
-
-    .navbar {
-        background-color: #333;
-        margin-bottom: 10px;
+  .navbar-static-top {
+    border-width:0px;
     }
 
-    .img-ico img {
-        padding-top: 9px;
-    }
+    .navbar.navbar-default {
+      background-color: #333;
+      border-bottom:0;
+      color: #fff;
+      box-shadow: 0 0 2px rgba(0,0,0,0.5);
 
-    .title-wrap img {
-        float:left;
-        margin-right:5px;
-    }
-
-    .navlist ul {
-        list-style-type:none;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 12px;
-        float:right;
-        margin-top:25px;
-    }
-    .navlist a {
-        color: #ccc;
-    }
-    .navlist a:hover {
-        text-decoration: none;
+      .navbar-brand {
         color: #fff;
-    }
-    .navlist ul li {
-        display: inline;
-        padding-right: 15px;
+        height:auto !important;
+        font-size:22px;
+        display:block;
+        line-height:20px;
+
+        &:nth-child(2) {
+          padding:10px 15px !important;
+        }
+
+        &:nth-child(3) {
+          padding:25px 15px !important;
+        }
+
+        img {
+          width:50px;
+          height:auto;
+        }
+      }
+
+      .navbar-nav {
+        &> li {
+          &> a {
+            color: #fff;
+            padding-top:25px;
+            padding-bottom:25px;
+            font-size:14px;
+            font-weight:400;
+            line-height:20px;
+          }
+        }
+      }
     }
     .byline {
-        clear: both;
-        color: #fff;
-        line-height: 1em;
-        font-size: 14px;
-        margin-left: 57px;
-        font-weight: 400;
-    }
-    .byline p {
-        margin-top:-16px;
+        margin-top:8px;
     }
     .counter {
         text-align: center;
@@ -145,7 +147,7 @@ header {
         margin-bottom: 20px;
     }
     .footer-govprinters {
-       
+
     }
 }
 
@@ -206,7 +208,7 @@ h2, .h2 {
 }
 
 .gazettes_nav {
-        
+
     .gazettes_nav_btn {
         background-color: #0067c5;
         border: none;
@@ -240,7 +242,7 @@ h2, .h2 {
         background-image: url(/img/provinces/national_4.jpg);
         background-position: center;
         background-size: cover;
-    }    
+    }
     .btn_wc {
         background-image: url(/img/provinces/westerncape.jpg);
         background-position: center;
