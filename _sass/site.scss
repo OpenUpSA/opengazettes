@@ -1,75 +1,92 @@
+$link-color: #982022;
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $link-color;
 }
 
 button {
     background-color: #fff;
-    color: #0067c5;
-    border: 2px solid #0067c5;
+    color: $link-color;
+    border: 2px solid $link-color;
     padding: 10px;
     font-weight:600;
 }
 
 button:hover {
-    background-color: #0067c5;
-    border: 2px solid #0067c5;
+    background-color: $link-color;
+    border: 2px solid $link-color;
     color: #ffffff;
 }
 
 .text-standout {
-    color: #0067c5;
+    color: $link-color;
     font-weight:600;
 }
 
 .site-header {
-    
-    background-color: #eeeeee;
-
-    .navbar {
-        background-color: #333;
-        margin-bottom: 10px;
+  .navbar-static-top {
+    border-width:0px;
     }
 
-    .img-ico img {
-        padding-top: 9px;
-    }
+    .navbar.navbar-default {
+      background-color: #333;
+      border-bottom:0;
+      color: #fff;
+      box-shadow: 0 0 2px rgba(0,0,0,0.5);
 
-    .title-wrap img {
-        float:left;
-        margin-right:5px;
-    }
-
-    .navlist ul {
-        list-style-type:none;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 12px;
-        float:right;
-        margin-top:25px;
-    }
-    .navlist a {
-        color: #ccc;
-    }
-    .navlist a:hover {
-        text-decoration: none;
+      .navbar-brand {
         color: #fff;
+        height:auto !important;
+        font-size:22px;
+        display:block;
+        line-height:20px;
+
+        &:nth-child(2) {
+          padding:10px 15px !important;
+        }
+
+        &:nth-child(3) {
+          padding:25px 15px !important;
+        }
+
+        img {
+          width:50px;
+          height:auto;
+        }
+      }
+
+      .navbar-nav {
+        &> li {
+
+          &.active {
+            &> a {
+              color: #aaa;
+            }
+          }
+          &> a {
+            color: #fff;
+            padding-top:25px;
+            padding-bottom:25px;
+            font-size:14px;
+            font-weight:400;
+            line-height:20px;
+          }
+        }
+      }
     }
-    .navlist ul li {
-        display: inline;
-        padding-right: 15px;
+    .subheader {
+      background-color: #ddd;
     }
     .byline {
-        clear: both;
-        color: #fff;
-        line-height: 1em;
-        font-size: 14px;
-        margin-left: 57px;
-        font-weight: 400;
-    }
-    .byline p {
-        margin-top:-16px;
+        margin-top:8px;
     }
     .counter {
         text-align: center;
@@ -80,8 +97,8 @@ button:hover {
         text-align:center;
         padding: 2px 14px;
         margin: 0px 5px;
-        border: 1px solid #0067c5;
-        color: #0067c5;
+        border: 1px solid $link-color;
+        color: $link-color;
     }
     .box-byline {
         text-align: center;
@@ -145,7 +162,7 @@ header {
         margin-bottom: 20px;
     }
     .footer-govprinters {
-       
+
     }
 }
 
@@ -186,7 +203,7 @@ h2, .h2 {
     margin-bottom: 30px;
     .cta a {
         font-weight: 600;
-        color: #0067c5;
+        color: $link-color;
     }
 }
 
@@ -206,9 +223,9 @@ h2, .h2 {
 }
 
 .gazettes_nav {
-        
+
     .gazettes_nav_btn {
-        background-color: #0067c5;
+        background-color: $link-color;
         border: none;
         color: #ffffff;
         padding: 10px;
@@ -240,7 +257,7 @@ h2, .h2 {
         background-image: url(/img/provinces/national_4.jpg);
         background-position: center;
         background-size: cover;
-    }    
+    }
     .btn_wc {
         background-image: url(/img/provinces/westerncape.jpg);
         background-position: center;
@@ -298,19 +315,19 @@ h2, .h2 {
 .join-title {
     background-color: #fff;
     padding: 15px;
-    color: #0067c5;
+    color: $link-color;
     font-weight: 700;
     font-size: 30px;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid #0067c5;
+    border: 2px solid $link-color;
 }
 
 .join-title:hover {
-    background-color:#0067c5;
+    background-color:$link-color;
     color: #fff;
-    border: 2px solid #0067c5;
+    border: 2px solid $link-color;
 }
 .banner a:hover {
     text-decoration:none;
