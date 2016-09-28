@@ -32,114 +32,108 @@ button:hover {
 }
 
 .site-header {
+  .navbar {
+    margin-bottom: 0px;
+  }
+
   .navbar-static-top {
     border-width:0px;
-    }
+  }
 
-    .navbar.navbar-default {
-      background-color: #333;
-      border-bottom:0;
-      color: #fff;
-      box-shadow: 0 0 2px rgba(0,0,0,0.5);
+  .navbar.navbar-default {
+    background-color: #333;
+    border-bottom:0;
+    color: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
 
-      .navbar-brand {
-        color: #fff;
-        height:auto !important;
-        font-size:22px;
-        display:block;
-        line-height:20px;
-
-        &:nth-child(2) {
-          padding:10px 15px !important;
-        }
-
-        &:nth-child(3) {
-          padding:25px 15px !important;
-        }
-
-        img {
-          width:50px;
-          height:auto;
-        }
-      }
-
-      .navbar-nav {
-        &> li {
-
-          &.active {
-            &> a {
-              color: #aaa;
-            }
-          }
-          &> a {
-            color: #fff;
-            padding-top:25px;
-            padding-bottom:25px;
-            font-size:14px;
-            font-weight:400;
-            line-height:20px;
-          }
-        }
-      }
-    }
-    .subheader {
-      background-color: #ddd;
-    }
-    .byline {
-        margin-top:8px;
-    }
-    .counter {
-        text-align: center;
-    }
-    .box-num {
-        font-weight: 700;
-        font-size: 26px;
-        text-align:center;
-        padding: 2px 14px;
-        margin: 0px 5px;
-        border: 1px solid $link-color;
-        color: $link-color;
-    }
-    .box-byline {
-        text-align: center;
-        margin-top: 10px;
-        font-size: 11px;
-    }
-    .liberate {
-        text-align: center;
-    }
     .navbar-brand {
-        color: #ffffff!important;
-        font-size: 22px;
-        font-weight: 400;
+      color: #fff;
+      height:auto !important;
+      font-size:22px;
+      display:block;
+      line-height:20px;
 
-        @media (max-width: $screen-xs-max) {
-            font-size: 20px;
-        }
+      &:nth-child(2) {
+        padding:10px 15px !important;
+      }
 
-        &,
-        &:visited {
-            color: $grey-color-dark;
-        }
+      &:nth-child(3) {
+        padding:25px 15px !important;
+      }
+
+      img {
+        width:50px;
+        height:auto;
+      }
     }
 
-    .header-cta {
-        p.cta-tagline {
-            clear:both;
-            text-align: center;
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 15px;
+    .navbar-nav {
+      &> li {
+
+        &.active {
+          &> a {
+            color: #aaa;
+          }
         }
-        p.cta-tagline row col-md-8 p {
-            margin-top: 12px;
+        &> a {
+          color: #fff;
+          padding-top:25px;
+          padding-bottom:25px;
+          font-size:14px;
+          font-weight:400;
+          line-height:20px;
         }
+      }
     }
-    .cta p {
-            margin-top: 30px;
-            font-size: 24px;
-            text-align: center;
+  }
+  .subheader {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #ddd;
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+
+    .counter {
+      text-align: right;
     }
+  }
+  .box-num {
+      font-weight: 700;
+      font-size: 26px;
+      text-align:center;
+      padding: 2px 14px;
+      margin: 0px 5px;
+      border: 1px solid $link-color;
+      color: $link-color;
+  }
+  .navbar-brand {
+      color: #ffffff!important;
+      font-size: 22px;
+      font-weight: 400;
+
+      @media (max-width: $screen-xs-max) {
+          font-size: 20px;
+      }
+
+      &,
+      &:visited {
+          color: $grey-color-dark;
+      }
+  }
+
+  .header-cta {
+      p.cta-tagline {
+          clear:both;
+          text-align: center;
+          font-size: 24px;
+          font-weight: 600;
+          margin-bottom: 15px;
+      }
+      p.cta-tagline row col-md-8 p {
+          margin-top: 12px;
+      }
+  }
 }
 
 header {
@@ -212,14 +206,6 @@ h2, .h2 {
     font-weight: 400;
     color: #333;
     margin-left: -15px;
-}
-
-.counter {
-    font-size: 20px;
-    font-weight: 400;
-    color: #333;
-    float:right;
-    margin-top: 5px;
 }
 
 .gazettes_nav {
@@ -318,7 +304,7 @@ h2, .h2 {
     color: $link-color;
     font-weight: 700;
     font-size: 30px;
-    width: 60%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
     border: 2px solid $link-color;
@@ -347,13 +333,6 @@ fa-chevron-circle-right {
 }
 
 @media screen and (max-width: 768px) {
-    .row {
-        margin-left: 0px;
-        margin-right:0px;
-    }
-    .site-header .byline {
-        margin-left: 72px;
-    }
     .page-tag {
         margin-left: 0px;
     }
@@ -361,18 +340,6 @@ fa-chevron-circle-right {
 
 
 @media screen and (max-width: 679px) {
-    .site-header .navlist ul {
-        clear: both;
-        float: none;
-        text-align: center;
-    }
-    .site-header .byline {
-        margin-left: 0px;
-        text-align: center;
-    }
-    .site-header .byline p {
-        margin-top: -47px;
-    }
     .navbar-brand {
         float: none;
         padding: 0px;
@@ -397,9 +364,12 @@ fa-chevron-circle-right {
     .page-tag {
         margin-left: 0px;
     }
-    .counter {
-        float:left;
-        font-size: 18px;
+    .site-header .subheader {
+      .counter,
+      .byline {
+          text-align: center;
+          font-size: 18px;
+      }
     }
 }
 
