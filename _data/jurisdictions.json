@@ -1,12 +1,42 @@
 {
-    "ZA": "South Africa",
-    "ZA-EC": "Eastern Cape",
-    "ZA-FS": "Free State",
-    "ZA-GT": "Gauteng",
-    "ZA-NL": "KwaZulu-Natal",
-    "ZA-LP": "Limpopo",
-    "ZA-MP": "Mpumalanga",
-    "ZA-NC": "Northern Cape",
-    "ZA-NW": "North West",
-    "ZA-WC": "Western Cape"
+    "ZA": {
+        "name": "South Africa",
+        "search_collection": 9
+    },
+    "ZA-EC": {
+        "name": "Eastern Cape",
+        "search_collection": 16
+    },
+    "ZA-FS": {
+        "name": "Free State",
+        "search_collection": 15
+    },
+    "ZA-GT": {
+        "name": "Gauteng",
+        "search_collection": 17
+    },
+    "ZA-NL": {
+        "name": "KwaZulu-Natal",
+        "search_collection": 18
+    },
+    "ZA-LP": {
+        "name": "Limpopo",
+        "search_collection": 19
+    },
+    "ZA-MP": {
+        "name": "Mpumalanga",
+        "search_collection": 20
+    },
+    "ZA-NC": {
+        "name": "Northern Cape",
+        "search_collection": 21
+    },
+    "ZA-NW": {
+        "name": "North West",
+        "search_collection": 22
+    },
+    "ZA-WC": {
+        "name": "Western Cape",
+        "search_collection": 23
+    }
 }

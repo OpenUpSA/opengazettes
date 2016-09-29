@@ -1,34 +1,9 @@
-$link-color: #982022;
-
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  color: $link-color;
-}
-
-button {
-    background-color: #fff;
-    color: $link-color;
-    border: 2px solid $link-color;
-    padding: 10px;
-    font-weight:600;
-}
-
-button:hover {
-    background-color: $link-color;
-    border: 2px solid $link-color;
-    color: #ffffff;
-}
-
-.text-standout {
-    color: $link-color;
-    font-weight:600;
 }
 
 .site-header {
@@ -205,6 +180,9 @@ h2, .h2 {
 }
 
 .gazettes_nav {
+    .search-form {
+        margin-bottom: 40px;
+    }
 
     .gazettes_nav_btn {
         background-color: $link-color;
@@ -371,4 +349,8 @@ article {
         margin-bottom: 20px;
         margin-top: 20px;
     }
+}
+
+form.search-form {
+  margin-bottom: 20px;
 }

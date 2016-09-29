@@ -11,7 +11,8 @@ jurisdictions = json.load(open('_data/jurisdictions.json'))
 
 def write_year(juri, year, gazettes):
     provincial = juri != "ZA"
-    title = jurisdictions[juri]
+    juri_info = jurisdictions[juri]
+    title = juri_info["name"]
     if provincial:
         title = title + " Provincial"
     title = title + " Gazettes"
@@ -21,7 +22,7 @@ def write_year(juri, year, gazettes):
         f.write("layout: year\n")
         f.write("title: %s %s\n" % (title, year))
         f.write("jurisdiction: %s\n" % juri)
-        f.write("jurisdiction_name: %s\n" % jurisdictions[juri])
+        f.write("jurisdiction_name: %s\n" % juri_info["name"])
         f.write("provincial: %s\n" % str(provincial).lower())
         f.write('year: "%s"\n' % year)
         f.write("---\n")
@@ -36,7 +37,8 @@ def write_jurisdiction(juri, years):
 
     with open('%s/index.md' % path, 'w') as f:
         provincial = juri != "ZA"
-        title = jurisdictions[juri]
+        juri_info = jurisdictions[juri]
+        title = juri_info["name"]
         if provincial:
             title = title + " Provincial"
         title = title + " Gazettes"
@@ -45,7 +47,7 @@ def write_jurisdiction(juri, years):
         f.write("layout: jurisdiction\n")
         f.write("title: %s\n" % title)
         f.write("jurisdiction: %s\n" % juri)
-        f.write("jurisdiction_name: %s\n" % jurisdictions[juri])
+        f.write("jurisdiction_name: %s\n" % juri_info["name"])
         f.write("provincial: %s\n" % str(provincial).lower())
         f.write("---\n")
 
@@ -54,11 +56,13 @@ def write_jurisdiction(juri, years):
 
 
 def build_index():
-    for juri, name in jurisdictions.iteritems():
+    for juri, info in jurisdictions.iteritems():
+        name = info["name"]
         gazettes[juri] = {
             'name': name,
             'years': set(),
-            'gazettes': defaultdict(list)
+            'gazettes': defaultdict(list),
+            'search_collection': info["search_collection"],
         }
 
     stats = {
