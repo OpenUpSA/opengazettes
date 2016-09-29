@@ -186,19 +186,15 @@ h2, .h2 {
     color: #333;
 }
 
-.banner p {
-        font-size: 30px;
-        font-weight: 600;
-    }
-
 .introduction {
-
     margin-top: 30px;
     margin-bottom: 30px;
-    .cta a {
-        font-weight: 600;
-        color: $link-color;
-    }
+}
+
+.banner {
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
 }
 
 .page-tag {
@@ -298,15 +294,11 @@ h2, .h2 {
     text-decoration: none;
 }
 
-.join-title {
-    background-color: $link-color;
+.big-cta {
+    display: block;
     padding: 15px;
+    background-color: $link-color;
     color: white;
-    font-weight: 700;
-    font-size: 30px;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
     border: 2px solid $link-color;
 
     &:hover {
@@ -326,10 +318,6 @@ h2, .h2 {
 
 .banner a .fa {
     font-size: 26px;
-}
-
-fa-chevron-circle-right {
-    font-size: 26px!important;
 }
 
 @media screen and (max-width: 768px) {
