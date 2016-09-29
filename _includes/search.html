@@ -2,14 +2,10 @@
   {% if site.data.gazettes[page.jurisdiction].search_collection %}
   <input type="hidden" name="filter:collection_id" value="{{ site.data.gazettes[page.jurisdiction].search_collection }}">
   {% endif %}
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search gazettes" autocomplete="off" name="q">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="submit">Search</button>
-        </span>
-      </div>
-    </div>
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search the gazettes" autocomplete="off" name="q">
+    <span class="input-group-btn">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </span>
   </div>
 </form>

@@ -10,7 +10,11 @@ layout: default
     {% include year_nav.html %}
   </header>
 
-  {% include search.html %}
+  <div class="row">
+    <div class="col-md-6">
+      {% include search.html %}
+    </div>
+  </div>
 
   <div class="post-content">
     {% for gazette in site.data.gazettes[page.jurisdiction].gazettes[page.year] %}
