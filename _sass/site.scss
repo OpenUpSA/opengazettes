@@ -299,22 +299,22 @@ h2, .h2 {
 }
 
 .join-title {
-    background-color: #fff;
+    background-color: $link-color;
     padding: 15px;
-    color: $link-color;
+    color: white;
     font-weight: 700;
     font-size: 30px;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
     border: 2px solid $link-color;
+
+    &:hover {
+      background-color: white;
+      color: $link-color;
+    }
 }
 
-.join-title:hover {
-    background-color:$link-color;
-    color: #fff;
-    border: 2px solid $link-color;
-}
 .banner a:hover {
     text-decoration:none;
 }
