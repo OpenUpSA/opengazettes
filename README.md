@@ -19,7 +19,7 @@ by jurisdiction and year. Jekyll then does the hard work of generating the listi
 To update this list from the production index:
 
     curl http://code4sa-gazettes.s3.amazonaws.com/archive/index/gazette-index-latest.jsonlines -O
-    python build-index.py
+    python bin/build-index.py
 
 # Build process
 
