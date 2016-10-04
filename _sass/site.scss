@@ -265,6 +265,33 @@ h2, .h2 {
 
 }
 
+.readmore {
+  font-size: 16px;
+  font-weight:300;
+}
+
+.readmore:hover {
+  text-decoration: underline;
+}
+
+.icons-section {
+  text-align: center;
+}
+
+.icons-section p {
+  font-size: 16px;
+}
+
+.icons-cta {
+  text-align: center;
+  width: 64px;
+}
+
+.due {
+  color: #982022;
+  font-size: 12px;
+}
+
 .img-center {
     text-align:center;
 }
@@ -274,10 +301,15 @@ h2, .h2 {
 
 .big-cta {
     display: block;
-    padding: 15px;
+    padding: 13px;
     background-color: $link-color;
     color: white;
     border: 2px solid $link-color;
+
+    width: 80%;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
 
     &:hover {
       background-color: white;

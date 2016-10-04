@@ -6,11 +6,14 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
+    <p>{{ page.notice }} </p>
   </header>
 
   <div class="row">
     <div class="col-md-6">
-      {% include search.html %}
+    {% if page.jurisdiction != "ZA-FS" %}
+        {% include search.html %}
+    {% endif %}
     </div>
   </div>
 
