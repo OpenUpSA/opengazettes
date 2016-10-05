@@ -128,10 +128,17 @@ header {
     .logo {
         width: auto;
         height: 75px;
+        margin: auto;
         margin-bottom: 20px;
     }
     .footer-govprinters {
 
+    }
+
+    @media (max-width: 420px) {
+      .col-logo {
+        width: 100%;
+      }
     }
 }
 
