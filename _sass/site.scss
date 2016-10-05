@@ -118,7 +118,9 @@ header {
 .site-footer {
     background-color: #f7f7f7;
     margin-top: 30px;
-    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
     h2 {
         margin-top: 0px;
     }
@@ -130,9 +132,6 @@ header {
         height: 75px;
         margin: auto;
         margin-bottom: 20px;
-    }
-    .footer-govprinters {
-
     }
 
     @media (max-width: 420px) {
