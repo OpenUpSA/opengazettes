@@ -11,6 +11,10 @@ layout: default
 
   <div class="row">
     <div class="col-md-6">
+    {% if page.jurisdiction = "ZA-FS" %}
+        {% include page.notice %}
+    {% end if %}
+
     {% if page.jurisdiction != "ZA-FS" %}
         {% include search.html %}
     {% endif %}
