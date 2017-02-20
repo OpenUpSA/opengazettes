@@ -47,7 +47,9 @@ body {
 
         &.active {
           &> a {
-            color: #aaa;
+            background-color: #333;
+            color: #c50003;
+            font-weight: 700;
           }
         }
         &> a {
