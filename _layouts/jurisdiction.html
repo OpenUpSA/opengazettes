@@ -27,6 +27,22 @@ layout: default
     {% if page.jurisdiction == "ZA-FS" %}
     <p>The Free State charges R11.70 for access to Free State Provincial Gazettes. We are working to find a way to keep providing access to current and historical gazettes for free. If you can help, please email us at <a href="mailto:gazettes@code4sa.org">gazettes@code4sa.org</a><br><br>If you think access to gazettes should be free for everyone, please email the Free State Premier at <a href="mailto:premier@premier.fs.gov.za?cc=secretar@fspremier.gov.za&bcc=reception@fspremier.gov.za">premier@premier.fs.gov.za, secretar@fspremier.gov.za, reception@fspremier.gov.za</a> and include the Gazettes office <a href="mailto:governmentgazette@fspremier.gov.za">governmentgazette@fspremier.gov.za</a></p>
     {% endif %}
+
+    {% if page.resources != "none" %}
+    <section class="resources">
+      <p>Browse gazettes resources</p>
+      <ul>
+        {% for resources in page.resources %}
+          <li>
+            <a href="{{ resources.url }}" target="_blank">
+              {{ resources.bullet }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
 </div>
 
 </article>
