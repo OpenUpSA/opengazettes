@@ -5,9 +5,8 @@ jurisdiction: ZA-NL
 jurisdiction_name: KwaZulu-Natal
 provincial: true
 resources: 
-- bullet: Kwa-Zulu Natal Law Society
-- bullet: Example 2
-- bullet: Example 3
+- bullet: https://www.lawsoc.co.za/
+- bullet: http://www.gpwonline.co.za/Gazettes/Pages/Provincial-Gazettes-KwaZulu-Natal.aspx
 ---
 
 
