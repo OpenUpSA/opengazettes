@@ -5,5 +5,6 @@ jurisdiction: ZA-MP
 jurisdiction_name: Mpumalanga
 provincial: true
 resources:
-- bullet: http://www.gpwonline.co.za/Gazettes/Pages/Provincial-Gazettes-Mpumalanga.aspx
+  - bullet: GPW Mpumalanga Provincial eGazettes
+    url: http://www.gpwonline.co.za/Gazettes/Pages/Provincial-Gazettes-Mpumalanga.aspx
 ---

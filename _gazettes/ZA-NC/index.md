@@ -5,5 +5,6 @@ jurisdiction: ZA-NC
 jurisdiction_name: Northern Cape
 provincial: true
 resources:
-- bullet: http://www.gpwonline.co.za/Gazettes/Pages/Provincial-Gazettes-Northern-Cape.aspx
+  - bullet: GPW Northern Cape Provincial eGazettes
+    url: http://www.gpwonline.co.za/Gazettes/Pages/Provincial-Gazettes-Northern-Cape.aspx
 ---

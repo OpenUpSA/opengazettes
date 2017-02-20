@@ -5,5 +5,6 @@ jurisdiction: ZA-WC
 jurisdiction_name: Western Cape
 provincial: true
 resources:
-- bullet: https://www.westerncape.gov.za/general-publication/provincial-gazette
+  - bullet: Western Cape Government
+    url: https://www.westerncape.gov.za/documents/public_info/P
 ---

@@ -5,5 +5,6 @@ jurisdiction: ZA-NW
 jurisdiction_name: North West
 provincial: true
 resources:
-- bullet: http://www.gpwonline.co.za/Gazettes/Pages/Provincial-Gazettes-North-West.aspx
+  - bullet: GPW North-West Provincial eGazettes
+    url: http://www.gpwonline.co.za/Gazettes/Pages/Provincial-Gazettes-North-West.aspx
 ---

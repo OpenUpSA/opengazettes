@@ -5,5 +5,6 @@ jurisdiction: ZA-LP
 jurisdiction_name: Limpopo
 provincial: true
 resources:
-- bullet: http://www.gpwonline.co.za/Gazettes/Pages/Provincial-Gazettes-Limpopo.aspx
+  - bullet: GPW Limpopo Provincial eGazettes
+    url: http://www.gpwonline.co.za/Gazettes/Pages/Provincial-Gazettes-Limpopo.aspx
 ---
