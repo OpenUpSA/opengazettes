@@ -92,11 +92,11 @@ def build_index():
     for juri in gazettes.iterkeys():
         write_jurisdiction(juri, gazettes[juri]['gazettes'])
 
-    # sort gazettes by date
+    # sort gazettes by date, then title
     for juris in gazettes.itervalues():
         juris['years'] = sorted(list(juris['years']))
         for items in juris['gazettes'].itervalues():
-            items.sort(key=lambda g: g['publication_date'])
+            items.sort(key=lambda g: [g['publication_date'][:7], g['volume_number'], g['issue_number'], g['issue_title']])
 
     gazettes['stats'] = stats
 
