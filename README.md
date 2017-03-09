@@ -1,7 +1,7 @@
 # Gazette listing
 
 This is a simple Jekyll website listing South African Gazettes that [Code for South Africa](http://codes4sa.org)
-has scraped and [indexed and stored in S3](http://code4sa-gazettes.s3.amazonaws.com/archive/index/gazette-index-latest.jsonlines) as part
+has scraped and [indexed and stored in S3](http://archive.opengazettes.org.za/index/gazette-index-latest.jsonlines) as part
 of our [gazette liberation project](https://github.com/Code4SA/gazettescrape).
 
 The structure is simple. Each jurisdiction (province) and year has an entry in the ``_gazettes`` directory, which
@@ -18,7 +18,7 @@ by jurisdiction and year. Jekyll then does the hard work of generating the listi
 
 To update this list from the production index:
 
-    curl http://code4sa-gazettes.s3.amazonaws.com/archive/index/gazette-index-latest.jsonlines -O
+    curl http://archive.opengazettes.org.za/index/gazette-index-latest.jsonlines -O
     python bin/build-index.py
 
 # Build process

@@ -78,7 +78,7 @@ def build_index():
         year = gazette['publication_date'].split('-')[0]
         iyear = int(year)
         if 'archive_url' not in gazette:
-            gazette['archive_url'] = 'http://code4sa-gazettes.s3.amazonaws.com/archive/' + gazette['archive_path']
+            gazette['archive_url'] = 'http://archive.opengazettes.org.za/archive/' + gazette['archive_path']
 
         gazettes[juri]['gazettes'][year].append(gazette)
         gazettes[juri]['years'].add(year)
