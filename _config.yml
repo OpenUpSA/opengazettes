@@ -9,7 +9,7 @@
 title: Open Gazettes South Africa
 email: gazettes@code4sa.org
 url: http://opengazettes.org.za
-baseurl: 
+baseurl:
 description: Making South African Government Gazettes freely available.
 twitter:
   username: code4sa
@@ -17,6 +17,7 @@ logo: /img/logo.png
 
 gems:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 collections:
   gazettes:
