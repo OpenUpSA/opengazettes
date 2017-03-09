@@ -23,10 +23,9 @@ To update this list from the production index:
 
 # Build process
 
-The website is built by GitHub pages based on the Gazette information already in the repository.
+The website is built automatically by GitHub pages based on the Gazette information already in the repository.
 
-[Travis](https://travis-ci.org/Code4SA/opengazettes) can also run a build, which downloads the latest
-Gazette index from S3 and then pushes that to GitHub (which produces an updated website).
+The [build branch](https://github.com/Code4SA/opengazettes/tree/build) has code that updates the information in the repository from the Gazette index in S3. A Travis build for this branch is triggered automatically when we archive new Gazettes in S3.
 
 # License
 
