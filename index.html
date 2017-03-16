@@ -1,6 +1,7 @@
 ---
 layout: base
 ---
+<script src="http://d3js.org/d3.v3.min.js"></script>
 
 <div class="introduction">
   <div class="container">
@@ -45,21 +46,122 @@ layout: base
 
         <h2>Provincial Gazettes</h2>
         <div class="row">
-          <div class="col-md-4"><a class="btn_p" href="/gazettes/ZA-EC/"><button class="gazettes_nav_btn btn_ec" name="button"><span class="btn_text">Eastern Cape</span></button></a></div>
-          <div class="col-md-4"><a class="btn_p" href="/gazettes/ZA-FS/"><button class="gazettes_nav_btn btn_fs" name="button"><span class="btn_text">Free State</span></button></a></div>
-          <div class="col-md-4"><a class="btn_p" href="/gazettes/ZA-GT/"><button class="gazettes_nav_btn btn_gt" name="button"><span class="btn_text">Gauteng</span></button></a></div>
+          <div class="col-md-4">
+            <a class="btn_p" href="/gazettes/ZA-EC/">
+              <button class="gazettes_nav_btn btn_ec" name="button">
+                <span class="btn_text">Eastern Cape</span>
+              </button>
+            </a>
+            <div id="chart"></div>
+          </div>
+          <div class="col-md-4">
+            <a class="btn_p" href="/gazettes/ZA-FS/">
+              <button class="gazettes_nav_btn btn_fs" name="button">
+                <span class="btn_text">Free State</span>
+              </button>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="btn_p" href="/gazettes/ZA-GT/">
+              <button class="gazettes_nav_btn btn_gt" name="button">
+                <span class="btn_text">Gauteng</span>
+              </button>
+            </a>
+          </div>
         </div>
         <div class="row">
-          <div class="col-md-4"><a class="btn_p" href="/gazettes/ZA-NL/"><button class="gazettes_nav_btn btn_kzn" name="button"><span class="btn_text">KwaZulu Natal</span></button></a></div>
-          <div class="col-md-4"><a class="btn_p" href="/gazettes/ZA-LP/"><button class="gazettes_nav_btn btn_lim" name="button"><span class="btn_text">Limpopo</span></button></a></div>
-          <div class="col-md-4"><a class="btn_p" href="/gazettes/ZA-MP/"><button class="gazettes_nav_btn btn_mp" name="button"><span class="btn_text">Mpumalanga</span></button></a></div>
+          <div class="col-md-4">
+            <a class="btn_p" href="/gazettes/ZA-NL/">
+              <button class="gazettes_nav_btn btn_kzn" name="button">
+                <span class="btn_text">KwaZulu Natal</span>
+              </button>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="btn_p" href="/gazettes/ZA-LP/">
+              <button class="gazettes_nav_btn btn_lim" name="button">
+                <span class="btn_text">Limpopo</span>
+              </button>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="btn_p" href="/gazettes/ZA-MP/">
+              <button class="gazettes_nav_btn btn_mp" name="button">
+                <span class="btn_text">Mpumalanga</span>
+              </button>
+            </a>
+          </div>
         </div>
         <div class="row">
-          <div class="col-md-4"><a class="btn_p" href="/gazettes/ZA-NC/"><button class="gazettes_nav_btn btn_nc" name="button"><span class="btn_text">Northern Cape</span></button></a></div>
-          <div class="col-md-4"><a class="btn_p" href="/gazettes/ZA-NW/"><button class="gazettes_nav_btn btn_nw" name="button"><span class="btn_text">North-West</span></button></a></div>
-          <div class="col-md-4"><a class="btn_p" href="/gazettes/ZA-WC/"><button class="gazettes_nav_btn btn_wc" name="button"><span class="btn_text">Western Cape</span></button></a></div>
+          <div class="col-md-4">
+            <a class="btn_p" href="/gazettes/ZA-NC/">
+              <button class="gazettes_nav_btn btn_nc" name="button">
+                <span class="btn_text">Northern Cape</span>
+              </button>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="btn_p" href="/gazettes/ZA-NW/">
+              <button class="gazettes_nav_btn btn_nw" name="button">
+                <span class="btn_text">North-West</span>
+              </button>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="btn_p" href="/gazettes/ZA-WC/">
+              <button class="gazettes_nav_btn btn_wc" name="button">
+                <span class="btn_text">Western Cape</span>
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  var margin = {top: 0, right: 0, bottom: 0, left: 0},
+      width = 230 - margin.left - margin.right,
+      height = 25 - margin.top - margin.bottom;
+
+  // Parse the date / time
+  var parseDate = d3.time.format("%Y").parse;
+
+  var x = d3.scale.ordinal().rangeRoundBands([0, width], 0);
+
+  var y = d3.scale.linear().range([height, 0]);
+
+  var svg = d3.select("#chart").append("svg")
+      .attr("width", width)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", 
+            "translate(" + margin.left + "," + margin.top + ")");
+
+  var xAxis = d3.svg.axis()
+      .scale(x)
+      .orient("bottom")
+      .tickFormat(d3.time.format("%Y"));
+
+  d3.csv("bar-data.csv", function(error, data) {
+
+      data.forEach(function(d) {
+          d.date = parseDate(d.date);
+          d.value = +d.value;
+      });
+    
+    x.domain(data.map(function(d) { return d.date; }));
+    y.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+    svg.selectAll("bar")
+        .data(data)
+      .enter().append("rect")
+        .style("fill", "#ccc")
+        .attr("x", function(d) { return x(d.date); })
+        .attr("width", x.rangeBand())
+        .attr("y", function(d) { return y(d.value); })
+        .attr("height", function(d) { return height - y(d.value); });
+
+  });
+</script>
