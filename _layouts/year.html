@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <article class="jurisdiction">
 
   <header class="post-header">
@@ -14,19 +13,22 @@ layout: default
     <div class="col-md-6">
       {% include search.html %}
     </div>
+    <div class="col-md-6">
+      <div id="chart"></div>
+      {{ site.data.gazettes.stats.counts[page.jurisdiction].available.year | json }}
+      {{ site.data.gazettes.stats.counts[page.jurisdiction].available.year }}
+    </div>
   </div>
 
   <div class="post-content">
     {% for gazette in site.data.gazettes[page.jurisdiction].gazettes[page.year] %}
       {% assign currentdate = gazette.publication_date | date: "%B %Y" %}
-
       {% if currentdate != date %}
         {% unless forloop.first %}</ul>{% endunless %}
         <h2>{{ currentdate }}</h2>
         <ul>
         {% assign date = currentdate %}
       {% endif %}
-
       <li>
         <a href="{{ gazette.archive_url }}">{{ gazette.issue_title }}</a>
       </li>
@@ -45,3 +47,51 @@ layout: default
   </div>
 
 </article>
+
+<script src="/js/jquery-1.11.3.min.js"></script>
+<script src="/js/d3.v4.min.js"></script>
+<script>
+var availability = {"2007":95, "2008":181, "2009":198, "2010":208, "2011":163, "2012":168, "2013":218, "2014":222, "2015":254, "2016":205, "2017":32};
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = $('#chart').parent().width() - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var x = d3.scaleBand()
+          .range([0, width])
+          .padding(0.1);
+var y = d3.scaleLinear()
+          .range([height, 0]);
+          
+var svg = d3.select("#chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", 
+          "translate(" + margin.left + "," + margin.top + ")");
+
+d3.json(availability, function(error, data) {
+  if (error) throw error;
+
+  data.forEach(function(d) {
+    d[1] = +d[1];
+  });
+
+  x.domain(data.map(function(d) { return d[0]; }));
+  y.domain([0, d3.max(data, function(d) { return d[1]; })]);
+
+  svg.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d[0]); })
+      .attr("width", x.bandwidth())
+      .attr("y", function(d) { return y(d[1]); })
+      .attr("height", function(d) { return height - y(d[1]); });
+
+  svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+});
+</script>

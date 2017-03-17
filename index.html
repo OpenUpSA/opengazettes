@@ -121,9 +121,9 @@ layout: base
 </div>
 
 <script>
-  var margin = {top: 0, right: 0, bottom: 0, left: 0},
+  var margin = {top: 0, right: 0, bottom: 25, left: 0},
       width = 230 - margin.left - margin.right,
-      height = 25 - margin.top - margin.bottom;
+      height = 50 - margin.top - margin.bottom;
 
   // Parse the date / time
   var parseDate = d3.time.format("%Y").parse;
@@ -132,17 +132,17 @@ layout: base
 
   var y = d3.scale.linear().range([height, 0]);
 
+  var xAxis = d3.svg.axis()
+      .scale(x)
+      .orient("bottom")
+      .tickFormat(d3.time.format("%Y"));
+
   var svg = d3.select("#chart").append("svg")
       .attr("width", width)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
       .attr("transform", 
             "translate(" + margin.left + "," + margin.top + ")");
-
-  var xAxis = d3.svg.axis()
-      .scale(x)
-      .orient("bottom")
-      .tickFormat(d3.time.format("%Y"));
 
   d3.csv("bar-data.csv", function(error, data) {
 
@@ -153,6 +153,16 @@ layout: base
     
     x.domain(data.map(function(d) { return d.date; }));
     y.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis)
+      .selectAll("text")
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", "-.55em")
+        .attr("transform", "rotate(-90)" );
 
     svg.selectAll("bar")
         .data(data)
