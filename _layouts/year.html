@@ -15,8 +15,6 @@ layout: default
     </div>
     <div class="col-md-6">
       <div id="chart"></div>
-      {{ site.data.gazettes.stats.counts[page.jurisdiction].available.year | json }}
-      {{ site.data.gazettes.stats.counts[page.jurisdiction].available.year }}
     </div>
   </div>
 
@@ -25,7 +23,7 @@ layout: default
       {% assign currentdate = gazette.publication_date | date: "%B %Y" %}
       {% if currentdate != date %}
         {% unless forloop.first %}</ul>{% endunless %}
-        <h2>{{ currentdate }}</h2>
+        <h2 id="{{ gazette.publication_date | date: "%m" }}">{{ currentdate }}</h2>
         <ul>
         {% assign date = currentdate %}
       {% endif %}
@@ -35,6 +33,7 @@ layout: default
       {% if forloop.last %}</ul>{% endif %}
     {% endfor %}
   </div>
+
 
   <footer>
     {% include year_nav.html %}
@@ -50,48 +49,69 @@ layout: default
 
 <script src="/js/jquery-1.11.3.min.js"></script>
 <script src="/js/d3.v4.min.js"></script>
+
 <script>
-var availability = {"2007":95, "2008":181, "2009":198, "2010":208, "2011":163, "2012":168, "2013":218, "2014":222, "2015":254, "2016":205, "2017":32};
 
-var margin = {top: 20, right: 20, bottom: 30, left: 40},
+var margin = {top: 0, right: 0, bottom: 20, left: 40},
     width = $('#chart').parent().width() - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    height = 100 - margin.top - margin.bottom;
 
-var x = d3.scaleBand()
-          .range([0, width])
-          .padding(0.1);
-var y = d3.scaleLinear()
-          .range([height, 0]);
-          
 var svg = d3.select("#chart").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", 
-          "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json(availability, function(error, data) {
-  if (error) throw error;
+var x = d3.scaleBand().rangeRound([0, width]).padding(0.05),
+    y = d3.scaleLinear().rangeRound([height, 0]);
 
-  data.forEach(function(d) {
-    d[1] = +d[1];
-  });
+var g = svg.append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  x.domain(data.map(function(d) { return d[0]; }));
-  y.domain([0, d3.max(data, function(d) { return d[1]; })]);
+var data = [
+  {year: "2007", number: 95},
+  {year: "2008", number: 191},
+  {year: "2009", number: 198},
+  {year: "2010", number: 298},
+  {year: "2011", number: 193},
+  {year: "2012", number: 168},
+  {year: "2013", number: 218},
+  {year: "2014", number: 122},
+  {year: "2015", number: 54},
+  {year: "2016", number: 59},
+  {year: "2017", number: 132},
+];
 
-  svg.selectAll(".bar")
-      .data(data)
-    .enter().append("rect")
-      .attr("class", "bar")
-      .attr("x", function(d) { return x(d[0]); })
-      .attr("width", x.bandwidth())
-      .attr("y", function(d) { return y(d[1]); })
-      .attr("height", function(d) { return height - y(d[1]); });
+var firstYear = data[0].year;
+var lastYear = data[data.length - 1].year;
 
-  svg.append("g")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
+x.domain(data.map(function(d) { return d.year; }));
+y.domain([0, d3.max(data, function(d) { return d.number; })]);
 
-});
+g.append("g")
+  .attr("class", "axis axis--y")
+  .call(d3.axisLeft(y).ticks(5))
+  
+svg.append("text")
+  .attr("class", "axis axis--x")
+  .attr("y", height + margin.top + 5)
+  .attr("x", margin.left + 5)
+  .attr("dy", "1em")
+  .text(firstYear);
+
+svg.append("text")
+  .attr("class", "axis axis--x")
+  .attr("y", height + margin.top + 5)
+  .attr("x", width + margin.left - 5)
+  .attr("dy", "1em")
+  .style("text-anchor", "end")
+  .text(lastYear);
+
+g.selectAll(".bar")
+  .data(data)
+  .enter().append("rect")
+    .attr("class", "bar")
+    .attr("x", function(d) { return x(d.year); })
+    .attr("y", function(d) { return y(d.number); })
+    .attr("width", x.bandwidth())
+    .attr("height", function(d) { return height - y(d.number); });
+
 </script>

@@ -104,6 +104,8 @@ def build_index():
 
         # count by year
         years = Counter(g['publication_date'].split("-")[0] for g in items)
+        if not years:
+            continue
 
         # ensure values for all years
         min_year = min(int(i) for i in years.iterkeys())

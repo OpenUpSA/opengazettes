@@ -1,6 +1,21 @@
 ---
 layout: default
 ---
+<style>
+  .domain, .tick > line {
+    display: none;
+  }
+
+  .monthly-chart {
+    margin: 10px 0 20px 0;
+    padding-bottom: 20px; 
+  }
+
+  svg .axis text {
+    fill: #999;
+    font-family: 'Open Sans', sans-serif;
+  } 
+</style>
 
 <article class="year">
 
@@ -16,22 +31,27 @@ layout: default
     </div>
   </div>
 
-  <div class="post-content"> 
+  <div class="post-content">
     <div class="row">
-
-      <div class="col-md-6">
-        <ul>
-          {% assign years = site.data.gazettes[page.jurisdiction].years | reverse %}
-          {% for year in years %}
-            <li><a href="{{ year }}">{{ year }}</a></li>
-          {% endfor %}
-        </ul>
+      <div class="col-md-8">
+        {% assign years = site.data.gazettes[page.jurisdiction].years | reverse %}
+        {% for thisyear in years %}
+          <div class="row">
+            <div class="col-md-4">
+              <h2 style="font-weight: 600;"><a href="{{ thisyear }}">{{ thisyear }}</a>
+              <small>{{ site.data.gazettes.stats.counts[page.jurisdiction].available.year[thisyear] }} {% if site.data.gazettes.stats.counts[page.jurisdiction].available.year[thisyear] == 1 %}gazette{% else %}gazettes{% endif %}</small></h2>
+            </div>
+            <div class="col-md-5">
+              <div year="{{ thisyear }}" class="monthly-chart"></div>
+            </div>
+          </div>
+        {% endfor %}
         {% if page.jurisdiction == "ZA-FS" %}
           <p>The Free State charges R11.70 for access to Free State Provincial Gazettes. We are working to find a way to keep providing access to current and historical gazettes for free. If you can help, please email us at <a href="mailto:gazettes@code4sa.org">gazettes@code4sa.org</a><br><br>If you think access to gazettes should be free for everyone, please email the Free State Premier at <a href="mailto:premier@premier.fs.gov.za?cc=secretar@fspremier.gov.za&bcc=reception@fspremier.gov.za">premier@premier.fs.gov.za, secretar@fspremier.gov.za, reception@fspremier.gov.za</a> and include the Gazettes office <a href="mailto:governmentgazette@fspremier.gov.za">governmentgazette@fspremier.gov.za</a></p>
         {% endif %}
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-4">
           {% include resources.html %}
       </div>
 
@@ -39,3 +59,77 @@ layout: default
   </div>
 
 </article>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="/js/underscore-min.js"></script>
+<script src="/js/d3.v4.min.js"></script>
+
+<script>
+  var collection = {{ site.data.gazettes.stats.counts[page.jurisdiction].available | jsonify }};
+
+  $(".monthly-chart").each(function(i) {
+    var thisYear = $(this).attr("year");
+    var data = collection.year_month[thisYear];
+    
+    var months = d3.keys(data).sort();
+
+    var monthlyData = [];
+
+    _.each(months, function(month) {
+      monthlyData.push({
+        month: month,
+        number: data[month]
+      })
+    });
+
+
+    var margin = {top: 0, right: 0, bottom: 20, left: 0},
+        width = $(this).parent().width() - margin.left - margin.right,
+        height = 50 - margin.top - margin.bottom;
+
+    var svg = d3.select(this).append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+
+    var x = d3.scaleBand().rangeRound([0, width]).padding(0.05),
+        y = d3.scaleLinear().rangeRound([height, 0]);
+
+    var g = svg.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    x.domain(monthlyData.map(function(d) { return d.month; }));
+    y.domain([0, d3.max(monthlyData, function(d) { return d.number; })]);
+
+    g.append("g")
+        .attr("class", "axis axis--x")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x)
+          .tickFormat(function(d) {
+            return { 
+              "01": "J",
+              "02": "F",
+              "03": "M",
+              "04": "A",
+              "05": "M",
+              "06": "J",
+              "07": "J",
+              "08": "A",
+              "09": "S",
+              "10": "O",
+              "11": "N",
+              "12": "D",
+              }[d];
+            }));
+
+    g.selectAll(".bar")
+      .data(monthlyData)
+      .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", function(d) { return x(d.month); })
+        .attr("y", function(d) { return y(d.number); })
+        .attr("width", x.bandwidth())
+        .attr("height", function(d) { return height - y(d.number); })
+        .on("click", function(d) { document.location = thisYear + "#" + d.month })
+  });
+
+</script>
