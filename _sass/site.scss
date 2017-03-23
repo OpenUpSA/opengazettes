@@ -442,7 +442,6 @@ form.search-form {
   }
   .monthly-chart {
     margin: 10px 0 20px 0;
-    padding-bottom: 20px; 
   }
   .status-box {
     margin: 10px 0px;
@@ -452,7 +451,11 @@ form.search-form {
     }
     .status-stats {
       text-align: center;
-      padding:10px;
+      h2 { font-size: 35px; }
+      i { color: #e8e8e8; }
+      .status-up {
+        padding: 10px;
+      }
     }
   }
 }
