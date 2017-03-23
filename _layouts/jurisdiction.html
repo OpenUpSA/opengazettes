@@ -28,13 +28,13 @@ layout: default
             </div>-->
 
             <div class="col-md-4 col-sm-6 col-xs-12 status-box">
-            <div class="status-border">
+            <!-- <div class="status-border"> -->
               <div class="status-stats">
                 <h2><a href="{{ thisyear }}">{{ thisyear }}</a></h2>
                 <p class="status-up"><i class="fa fa-signal" aria-hidden="true"></i> {{ site.data.gazettes.stats.counts[page.jurisdiction].available.year[thisyear] }} {% if site.data.gazettes.stats.counts[page.jurisdiction].available.year[thisyear] == 1 %}gazette{% else %}gazettes{% endif %}</p>
               </div>
               <div year="{{ thisyear }}" class="monthly-chart"></div>
-            </div>
+            <!-- </div> -->
             </div>
 
           
