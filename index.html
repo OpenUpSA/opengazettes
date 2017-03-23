@@ -1,8 +1,6 @@
 ---
 layout: base
 ---
-<script src="http://d3js.org/d3.v3.min.js"></script>
-
 <div class="introduction">
   <div class="container">
     <div class="row">
@@ -52,7 +50,6 @@ layout: base
                 <span class="btn_text">Eastern Cape</span>
               </button>
             </a>
-            <div id="chart"></div>
           </div>
           <div class="col-md-4">
             <a class="btn_p" href="/gazettes/ZA-FS/">
@@ -119,59 +116,3 @@ layout: base
     </div>
   </div>
 </div>
-
-<script>
-  var margin = {top: 0, right: 0, bottom: 25, left: 0},
-      width = 230 - margin.left - margin.right,
-      height = 50 - margin.top - margin.bottom;
-
-  // Parse the date / time
-  var parseDate = d3.time.format("%Y").parse;
-
-  var x = d3.scale.ordinal().rangeRoundBands([0, width], 0);
-
-  var y = d3.scale.linear().range([height, 0]);
-
-  var xAxis = d3.svg.axis()
-      .scale(x)
-      .orient("bottom")
-      .tickFormat(d3.time.format("%Y"));
-
-  var svg = d3.select("#chart").append("svg")
-      .attr("width", width)
-      .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-      .attr("transform", 
-            "translate(" + margin.left + "," + margin.top + ")");
-
-  d3.csv("bar-data.csv", function(error, data) {
-
-      data.forEach(function(d) {
-          d.date = parseDate(d.date);
-          d.value = +d.value;
-      });
-    
-    x.domain(data.map(function(d) { return d.date; }));
-    y.domain([0, d3.max(data, function(d) { return d.value; })]);
-
-    svg.append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis)
-      .selectAll("text")
-        .style("text-anchor", "end")
-        .attr("dx", "-.8em")
-        .attr("dy", "-.55em")
-        .attr("transform", "rotate(-90)" );
-
-    svg.selectAll("bar")
-        .data(data)
-      .enter().append("rect")
-        .style("fill", "#ccc")
-        .attr("x", function(d) { return x(d.date); })
-        .attr("width", x.rangeBand())
-        .attr("y", function(d) { return y(d.value); })
-        .attr("height", function(d) { return height - y(d.value); });
-
-  });
-</script>

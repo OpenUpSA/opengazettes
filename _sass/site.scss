@@ -209,7 +209,7 @@ h2, .h2 {
         color: #ffffff;
         padding: 10px;
         font-weight: 600;
-        margin-bottom: 5px;
+        margin-bottom: 20px;
         width: 100%;
         height: 200px;
         border-radius: 5px;
@@ -411,25 +411,37 @@ form.search-form {
   padding: 20px;
 }
 
-.axis {
-  font: 10px sans-serif;
-}
 
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-#chart {
-  margin-bottom: 15px;
-}
-
-svg rect {
-  fill: #ccc !important;
-  &:hover {
-    fill: #333 !important;
-    cursor: pointer;
+.jurisdiction-stats {
+  svg {
+    rect {
+      fill: $grey-color-light !important;
+      &:hover {
+        fill: $link-hover-color !important;
+        cursor: pointer;
+      }
+    }
+    .axis {
+      font: 10px sans-serif;
+      path, line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+      }
+      text {
+        fill: $grey-color;
+        font-family: 'Open Sans', sans-serif;
+      } 
+    }
+    .domain, .tick > line {
+      display: none;
+    }
+  }
+  h2 {
+    font-weight: 600;
+  }
+  .monthly-chart {
+    margin: 10px 0 20px 0;
+    padding-bottom: 20px; 
   }
 }
