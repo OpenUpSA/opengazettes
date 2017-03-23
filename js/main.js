@@ -40,25 +40,25 @@ $(".monthly-chart").each(function(i) {
   y.domain([0, d3.max(monthlyData, function(d) { return d.number; })]);
 
   g.append("g")
-      .attr("class", "axis axis--x")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x)
-        .tickFormat(function(d) {
-          return { 
-            "01": "J",
-            "02": "F",
-            "03": "M",
-            "04": "A",
-            "05": "M",
-            "06": "J",
-            "07": "J",
-            "08": "A",
-            "09": "S",
-            "10": "O",
-            "11": "N",
-            "12": "D",
-            }[d];
-          }));
+    .attr("class", "axis axis--x")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x)
+      .tickFormat(function(d) {
+        return { 
+          "01": "J",
+          "02": "F",
+          "03": "M",
+          "04": "A",
+          "05": "M",
+          "06": "J",
+          "07": "J",
+          "08": "A",
+          "09": "S",
+          "10": "O",
+          "11": "N",
+          "12": "D",
+          }[d];
+        }));
 
   g.selectAll(".bar")
     .data(monthlyData)
@@ -68,5 +68,14 @@ $(".monthly-chart").each(function(i) {
       .attr("y", function(d) { return y(d.number); })
       .attr("width", x.bandwidth())
       .attr("height", function(d) { return height - y(d.number); })
-      .on("click", function(d) { document.location = thisYear + "#" + d.month })
+      .on("click", function(d) { document.location = thisYear + "#" + d.month });
+
+  svg.selectAll("text.bar")
+      .data(monthlyData)
+    .enter().append("text")
+      .attr("class", "bar")
+      .attr("text-anchor", "middle")
+      .attr("x", function(d) { return x(d.month) + x.bandwidth()/2; })
+      .attr("y", function(d) { return y(d.number) - 5; })
+      .text(function(d) { return d.number; });
 });
