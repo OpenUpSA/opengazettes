@@ -21,15 +21,23 @@ layout: default
         {% assign years = site.data.gazettes[page.jurisdiction].years | reverse %}
         {% for thisyear in years %}
           <div class="row jurisdiction-stats">
-            <div class="col-md-4">
+
+            <!--<div class="col-md-4">
               <h2><a href="{{ thisyear }}">{{ thisyear }}</a>
               <small>{{ site.data.gazettes.stats.counts[page.jurisdiction].available.year[thisyear] }} {% if site.data.gazettes.stats.counts[page.jurisdiction].available.year[thisyear] == 1 %}gazette{% else %}gazettes{% endif %}</small></h2>
-            </div>
-            <div class="col-md-5">
+            </div>-->
+
+            <div class="col-md-4 status-box">
+              <div class="status-stats">
+                <h2><a href="{{ thisyear }}">{{ thisyear }}</a></h2>
+                <p>{{ site.data.gazettes.stats.counts[page.jurisdiction].available.year[thisyear] }} {% if site.data.gazettes.stats.counts[page.jurisdiction].available.year[thisyear] == 1 %}gazette{% else %}gazettes{% endif %}</p>
+              </div>
               <div year="{{ thisyear }}" class="monthly-chart"></div>
             </div>
+
           </div>
         {% endfor %}
+
         {% if page.jurisdiction == "ZA-FS" %}
           <p>The Free State charges R11.70 for access to Free State Provincial Gazettes. We are working to find a way to keep providing access to current and historical gazettes for free. If you can help, please email us at <a href="mailto:gazettes@code4sa.org">gazettes@code4sa.org</a><br><br>If you think access to gazettes should be free for everyone, please email the Free State Premier at <a href="mailto:premier@premier.fs.gov.za?cc=secretar@fspremier.gov.za&bcc=reception@fspremier.gov.za">premier@premier.fs.gov.za, secretar@fspremier.gov.za, reception@fspremier.gov.za</a> and include the Gazettes office <a href="mailto:governmentgazette@fspremier.gov.za">governmentgazette@fspremier.gov.za</a></p>
         {% endif %}

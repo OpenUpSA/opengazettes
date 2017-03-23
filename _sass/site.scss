@@ -444,4 +444,11 @@ form.search-form {
     margin: 10px 0 20px 0;
     padding-bottom: 20px; 
   }
+  .status-box {
+    border: 1px solid #f7f7f7;
+    padding: 20px;
+    .status-stats {
+      text-align: center;
+    }
+  }
 }
