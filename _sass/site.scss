@@ -445,8 +445,11 @@ form.search-form {
     padding-bottom: 20px; 
   }
   .status-box {
-    border: 1px solid #f7f7f7;
-    padding: 10px;
+    margin: 10px 0px;
+    .status-border {
+      border: 1px solid #f7f7f7;
+      padding: 10px;
+    }
     .status-stats {
       text-align: center;
       padding:10px;
