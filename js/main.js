@@ -22,9 +22,9 @@ $(".monthly-chart").each(function(i) {
     };
   });
 
-  var margin = {top: 0, right: 0, bottom: 20, left: 0},
+  var margin = {top: 15, right: 0, bottom: 20, left: 0},
       width = $(this).parent().width() - margin.left - margin.right,
-      height = 50 - margin.top - margin.bottom;
+      height = 60 - margin.top - margin.bottom;
 
   var svg = d3.select(this).append("svg")
       .attr("width", width + margin.left + margin.right)
@@ -73,9 +73,19 @@ $(".monthly-chart").each(function(i) {
   svg.selectAll("text.bar")
       .data(monthlyData)
     .enter().append("text")
-      .attr("class", "bar")
+      .attr("class", "bar monthly-value")
       .attr("text-anchor", "middle")
       .attr("x", function(d) { return x(d.month) + x.bandwidth()/2; })
-      .attr("y", function(d) { return y(d.number) - 5; })
+      .attr("y", function(d) { return y(d.number) + 10 ; })
       .text(function(d) { return d.number; });
 });
+
+$(".status-box")
+  .mouseenter(function() {
+    $("text.bar", this).fadeTo(250, 1);
+    console.log("mouse enter");
+  })
+  .mouseleave(function() {
+    $("text.bar", this).fadeOut(250);
+    console.log("mouse leave");
+  });

@@ -458,4 +458,10 @@ form.search-form {
       }
     }
   }
+  text.bar {
+    fill: $grey-color;
+    font-size: 9px;
+    font-family: 'Open Sans', sans-serif;
+    opacity: 0;
+  }
 }
