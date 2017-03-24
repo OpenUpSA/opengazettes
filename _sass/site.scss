@@ -413,6 +413,10 @@ form.search-form {
 
 
 .jurisdiction-stats, .year-stats {
+  .status-year-count {
+      text-align:center;
+      font-size: 26px;
+  }
   svg {
     rect {
       fill: $grey-color-light !important;
