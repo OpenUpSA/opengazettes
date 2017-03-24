@@ -1,7 +1,8 @@
 #!/bin/env python
 import json
 import os
-from collections import defaultdict
+from collections import defaultdict, Counter
+from itertools import chain
 
 
 # jurisdiction -> year -> [gazettes]
@@ -70,6 +71,7 @@ def build_index():
         'earliest_year': 9999,
         'latest_year': 0,
         'years': defaultdict(int),
+        'counts': {},
     }
 
     for line in open('gazette-index-latest.jsonlines'):
@@ -93,15 +95,48 @@ def build_index():
         write_jurisdiction(juri, gazettes[juri]['gazettes'])
 
     # sort gazettes by date, then title
-    for juris in gazettes.itervalues():
+    for code, juris in gazettes.iteritems():
         juris['years'] = sorted(list(juris['years']))
         for items in juris['gazettes'].itervalues():
-            items.sort(key=lambda g: [g['publication_date'][:7], g['volume_number'], g['issue_number'], g['issue_title']])
+            items.sort(key=lambda g: g['publication_date'])
+
+        items = list(chain(*juris['gazettes'].itervalues()))
+
+        # count by year
+        years = Counter(g['publication_date'].split("-")[0] for g in items)
+        if not years:
+            continue
+
+        # ensure values for all years
+        min_year = min(int(i) for i in years.iterkeys())
+        max_year = max(int(i) for i in years.iterkeys())
+        for year in xrange(min_year, max_year + 1):
+            years.update({str(year): 0})
+
+        # count by year and month
+        year_months = Counter(tuple(g['publication_date'].split("-")[0:2]) for g in items)
+
+        # ensure values for contiguous years and months
+        for year in xrange(min_year, max_year + 1):
+            for m in xrange(1, 13):
+                year_months.update({(str(year), '%02d' % m): 0})
+
+        # make year_months nested
+        year_months_nested = {}
+        for (y, m), v in year_months.iteritems():
+            year_months_nested.setdefault(y, {})[m] = v
+
+        stats['counts'][code] = {
+            'available': {
+                'year': years,
+                'year_month': year_months_nested,
+            }
+        }
 
     gazettes['stats'] = stats
 
     with open('_data/gazettes.json', 'w') as f:
-        json.dump(gazettes, f)
+        json.dump(gazettes, f, sort_keys=True)
 
 
 if __name__ == '__main__':

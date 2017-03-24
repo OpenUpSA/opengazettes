@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
@@ -222,7 +224,7 @@ h2, .h2 {
     .btn_p {
         color: #ffffff;
         font-size: 24px;
-        font-family: 'Lato', sans-seif;
+        font-family: 'Lato', sans-serif;
         line-height: 42px;
     }
 
@@ -407,4 +409,59 @@ form.search-form {
 .resources {
   background-color: #f7f7f7;
   padding: 20px;
+}
+
+
+.jurisdiction-stats, .year-stats {
+  svg {
+    rect {
+      fill: $grey-color-light !important;
+      &:hover {
+        fill: $link-hover-color !important;
+        cursor: pointer;
+      }
+    }
+    .axis {
+      font: 10px sans-serif;
+      path, line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+      }
+      text {
+        fill: $grey-color;
+        font-family: 'Open Sans', sans-serif;
+      } 
+    }
+    .domain, .tick > line {
+      display: none;
+    }
+  }
+  h2 {
+    font-weight: 600;
+  }
+  .monthly-chart {
+    margin: 10px 0 20px 0;
+  }
+  .status-box {
+    margin: 10px 0px;
+    .status-border {
+      border: 1px solid #f7f7f7;
+      padding: 10px;
+    }
+    .status-stats {
+      text-align: center;
+      h2 { font-size: 35px; }
+      i { color: #e8e8e8; }
+      .status-up {
+        padding: 10px;
+      }
+    }
+  }
+  text.bar {
+    fill: $grey-color;
+    font-size: 9px;
+    font-family: 'Open Sans', sans-serif;
+    opacity: 0;
+  }
 }
