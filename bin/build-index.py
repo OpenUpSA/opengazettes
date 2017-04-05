@@ -80,7 +80,7 @@ def build_index():
         year = gazette['publication_date'].split('-')[0]
         iyear = int(year)
         if 'archive_url' not in gazette:
-            gazette['archive_url'] = 'http://archive.opengazettes.org.za/archive/' + gazette['archive_path']
+            gazette['archive_url'] = 'https://archive.opengazettes.org.za/archive/' + gazette['archive_path']
 
         gazettes[juri]['gazettes'][year].append(gazette)
         gazettes[juri]['years'].add(year)
