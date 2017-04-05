@@ -98,7 +98,7 @@ def build_index():
     for code, juris in gazettes.iteritems():
         juris['years'] = sorted(list(juris['years']))
         for items in juris['gazettes'].itervalues():
-            items.sort(key=lambda g: g['publication_date'])
+            items.sort(key=lambda g: [g['publication_date'][:7], g['volume_number'], g['issue_number'], g['issue_title']])
 
         items = list(chain(*juris['gazettes'].itervalues()))
 
