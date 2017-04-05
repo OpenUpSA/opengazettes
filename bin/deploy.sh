@@ -10,7 +10,7 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "build" ]; t
   git checkout -b gh-pages
 
   # update the index file and rebuild site data
-  curl http://archive.opengazettes.org.za/index/gazette-index-latest.jsonlines -O
+  curl https://archive.opengazettes.org.za/index/gazette-index-latest.jsonlines -O
   python bin/build-index.py
 
   # ensure the site builds
