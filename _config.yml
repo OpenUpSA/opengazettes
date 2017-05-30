@@ -12,7 +12,7 @@ url: https://opengazettes.org.za
 baseurl:
 description: Making South African Government Gazettes freely available.
 twitter:
-  username: code4sa
+  username: openupsa
 logo: /img/logo.png
 
 gems:
