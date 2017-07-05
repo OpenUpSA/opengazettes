@@ -38,5 +38,9 @@
     "ZA-WC": {
         "name": "Western Cape",
         "search_collection": 23
+    },
+    "ZA-transvaal": {
+        "name": "Transvaal",
+        "search_collection": 65
     }
 }
