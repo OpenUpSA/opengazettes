@@ -451,3 +451,17 @@ form.search-form {
     opacity: 0;
   }
 }
+
+.legal-terms {
+  @media (min-width: 992px) {
+    .privacy-policy {
+      border-left: 1px solid #ccc;
+    }
+  }
+  .table-of-content {
+    a {
+      font-size: 14px;
+      display: block;
+    }
+  }
+}
