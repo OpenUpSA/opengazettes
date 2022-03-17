@@ -26,5 +26,6 @@ $navbar-border-radius: 0px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "bootstrap",
+        "bootstrap/alerts",
         "site"
 ;
